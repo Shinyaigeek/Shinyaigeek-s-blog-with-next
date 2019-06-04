@@ -1,13 +1,16 @@
-import React, { Component } from 'react'
+import React from 'react'
+
+// import dynamic from 'next/dynamic';
+
+// const Scss=dynamic(import ('../assets/css/header.scss'),{ssr:true});
 
 import '../assets/css/header.scss'
 
-export default class Header extends Component {
-    render() {
-        return (
-            <div className="header">
-                This is header
-            </div>
-        )
-    }
+export default function Header() {
+    return (
+        <div className="header">
+            This is Header
+        </div>
+    )
 }
+
