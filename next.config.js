@@ -1,5 +1,6 @@
 const withTypescript = require('@zeit/next-typescript');
 const withSass = require('@zeit/next-sass');
+const withCSS = require('@zeit/next-css');
 
 const withPlugins = require('next-compose-plugins')
 
@@ -8,12 +9,6 @@ module.exports = withPlugins([
         withSass,
         {
             webpack: function (config) {
-                config.module.rules.push({
-                    test: /\.(eot|woff|woff2|ttf|svg|png|jpg|gif)$/,
-                    use: {
-                        loader: 'url-loader'
-                    }
-                })
 
                 config.module.rules.push({
                     test: /\.scss$/,
@@ -25,14 +20,26 @@ module.exports = withPlugins([
                         {
                             loader: 'sass-resources-loader',
                             options: {
-                                // Provide path to the file with resources
-                                resources: './assets/css/resources.scss',
-
-                                // Or array of paths
-                                resources: ['./path/to/vars.scss', './path/to/mixins.scss']
+                                resources: './assets/css/header.scss',
                             },
                         },
                     ],
+                })
+
+                config.module.rules.push({
+                    test: /\.css$/,
+                    use: [
+                        'style-loader',
+                        'css-loader',
+                        'postcss-loader',
+                    ],
+                })
+
+                config.module.rules.push({
+                    test: /\.(eot|woff|woff2|ttf|svg|png|jpg|gif)$/,
+                    use: {
+                        loader: 'url-loader'
+                    }
                 })
 
                 return config
@@ -53,6 +60,32 @@ module.exports = withPlugins([
                     }
 
                 })
+
+                config.module.rules.push({
+                    test: /\.scss$/,
+                    use: [
+                        'style-loader',
+                        'css-loader',
+                        'sass-loader',
+                    ],
+                })
+
+                config.module.rules.push({
+                    test: /\.css$/,
+                    use: [
+                        'style-loader',
+                        'css-loader',
+                    ],
+                })
+
+                config.module.rules.push({
+                    test: /\.(eot|woff|woff2|ttf|svg|png|jpg|gif)$/,
+                    use: {
+                        loader: 'url-loader'
+                    }
+                })
+
+
                 return config
             }
         }

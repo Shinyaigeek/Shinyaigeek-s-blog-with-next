@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Shinyaigeek/Shinyaigeek-s-blog-with-next#readme",
   "dependencies": {
+    "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
     "@zeit/next-typescript": "^1.1.1",
     "babel-loader": "^8.0.6",
