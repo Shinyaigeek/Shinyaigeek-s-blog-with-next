@@ -37,14 +37,18 @@
     "postcss-loader": "^3.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "sass-loader": "^7.1.0",
+    "sass-resources-loader": "^2.0.1",
     "style-loader": "^0.23.1",
     "styled-components": "^4.2.1",
     "ts-loader": "^6.0.2",
     "ttf-loader": "^1.0.2",
     "twitter-ios-modal": "^1.2.8",
-    "typescript": "^3.5.1"
+    "url-loader": "^1.1.2",
+    "webpack-cli": "^3.3.2"
   },
   "devDependencies": {
+    "typescript": "^3.5.1",
     "webpack": "^4.32.2"
   }
 }
