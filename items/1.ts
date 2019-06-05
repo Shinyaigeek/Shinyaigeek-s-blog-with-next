@@ -1,7 +1,9 @@
 
 module.exports = {
-    name:"one",
+    name:"初めまして",
     path:"/1",
-    tag:["JavaScript","Blog","Python"],
-    description:`This is Blog`,
+    tag:["Blog"],
+    description:`初めまして`,
+    img:"../static/icon.jpg",
+    date:"2018/10/21"
 }

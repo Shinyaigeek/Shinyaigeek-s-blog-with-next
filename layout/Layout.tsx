@@ -12,7 +12,7 @@ import '../assets/css/layout.scss'
 const Scss = require('../assets/css/header.scss')
 
 const Layout = (ChildComponent:any) =>  (props:any) => (
-    <div>
+    <div className="layout">
         <Header />
             <div className="notHeader">
                 <ChildComponent {...props} />

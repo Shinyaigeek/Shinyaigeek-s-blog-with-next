@@ -1,16 +1,18 @@
 import React from 'react'
 
-// import dynamic from 'next/dynamic';
-
-// const Scss=dynamic(import ('../assets/css/header.scss'),{ssr:true});
+import Link from 'next/link'
 
 import '../assets/css/header.scss'
 
 export default function Header() {
     return (
-        <div className="header">
-            This is Header
-        </div>
+        <Link href="/">
+            <a>
+                <div className="header">
+                    しにゃいの学習帳
+                </div>
+            </a>
+        </Link>
     )
 }
 

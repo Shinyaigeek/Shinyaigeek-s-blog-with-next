@@ -24,9 +24,14 @@ app
     const server = express()
 
 
-    server.get('/p/:id', (req, res) => {
+    server.get('/:id', (req, res) => {
       const actualPage = '/post'
-      app.render(req, res, actualPage)
+      const postIndex = req.params.id 
+      const postProps = {
+        postIndex:postIndex,
+        postInfo:itemList[postIndex -   1]
+      }
+      app.render(req, res, actualPage,postProps)
     })
 
     server.get('/', (req, res) => {
@@ -40,7 +45,11 @@ app
 
     server.get('*', (req, res) => {
       const actualPage = '/'
-      app.render(req, res, actualPage)
+      const HomeProps = {
+        itemN: itemN / 2,
+        itemList:itemList
+      }
+      app.render(req, res, actualPage, HomeProps)
     })
 
     server.listen(3000, (err) => {

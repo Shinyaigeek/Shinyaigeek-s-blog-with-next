@@ -48,6 +48,23 @@ const nextConfig = {
             }
         })
 
+        config.module.rules.push({
+            test:/\.md$/,
+            use:[
+                {
+                    loader: "html-loader"
+                },
+                {
+                    loader: "markdown-loader",
+                    options: {
+                        pedantic: true,
+                        breaks:true,
+                        gfm:true
+                    }
+                }
+            ]
+        })
+
 
         return config
     }
