@@ -6,7 +6,7 @@ import '../assets/css/header.scss'
 
 export default function Header() {
     return (
-        <Link href="/">
+        <Link prefetch href="/">
             <a>
                 <div className="header">
                     しにゃいの学習帳

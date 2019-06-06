@@ -24,7 +24,7 @@ app
     const server = express()
 
 
-    server.get('/:id', (req, res) => {
+    server.get('/p/:id', (req, res) => {
       const actualPage = '/post'
       const postIndex = req.params.id 
       const postProps = {
@@ -35,6 +35,7 @@ app
     })
 
     server.get('/', (req, res) => {
+      console.log(77777)
       const actualPage = '/'
       const HomeProps = {
         itemN: itemN / 2,
@@ -44,6 +45,7 @@ app
     })
 
     server.get('*', (req, res) => {
+      console.log(88888)
       const actualPage = '/'
       const HomeProps = {
         itemN: itemN / 2,

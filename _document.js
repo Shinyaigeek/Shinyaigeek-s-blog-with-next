@@ -12,6 +12,7 @@ export default class SiteDocument extends Document {
         <Head>
           <meta charSet="utf-8" />
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+          <title>開発中</title>
           {styleTags}
         </Head>
         <body>

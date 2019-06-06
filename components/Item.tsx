@@ -9,8 +9,8 @@ export default function Item(itemData:any) {
     console.log(Data)
     return (
         <div className="item--card">
-            <Link href={Data.path}>
-                <a>
+            <Link prefetch href={"p" + Data.path}>
+                <a className="item--card__anchor">
                     <div className="card--title">
                         {Data.name}
                     </div>
