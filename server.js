@@ -12,11 +12,7 @@ const handle = app.getRequestHandler()
 
 
 
-const itemN = dirN('./items').length
 
-const itemList = getFileContent(itemN / 2)
-
-console.log(itemList)
 
 app
   .prepare()
@@ -26,32 +22,32 @@ app
 
     server.get('/p/:id', (req, res) => {
       const actualPage = '/post'
-      const postIndex = req.params.id 
+      const itemN = dirN('./items').length
+      const itemList = getFileContent(itemN / 2)
+      const postIndex = req.params.id
       const postProps = {
-        postIndex:postIndex,
-        postInfo:itemList[postIndex -   1]
+        postIndex: postIndex,
+        postInfo: itemList[postIndex - 1]
       }
-      app.render(req, res, actualPage,postProps)
+      app.render(req, res, actualPage, postProps)
     })
 
     server.get('/', (req, res) => {
       console.log(77777)
+      const itemN = dirN('./items').length
+      const itemList = getFileContent(itemN / 2)
       const actualPage = '/'
       const HomeProps = {
         itemN: itemN / 2,
-        itemList:itemList
+        itemList: itemList
       }
       app.render(req, res, actualPage, HomeProps)
     })
 
     server.get('*', (req, res) => {
       console.log(88888)
-      const actualPage = '/'
-      const HomeProps = {
-        itemN: itemN / 2,
-        itemList:itemList
-      }
-      app.render(req, res, actualPage, HomeProps)
+      const actualPage = 'error'
+      app.render(req, res, actualPage)
     })
 
     server.listen(3000, (err) => {
@@ -59,7 +55,7 @@ app
       console.log('> Ready on http://localhost:3000')
     })
   })
-  
+
   .catch((ex) => {
     console.error(ex.stack)
     process.exit(1)

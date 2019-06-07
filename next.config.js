@@ -9,6 +9,11 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const internalReactToolboxDeps = /react-toolbox(?!.*node_modules)/
 const externalReactToolboxDeps = /node_modules(?!\/react-toolbox(?!.*node_modules))/
+const marked = require("marked");
+const renderer = new marked.Renderer();
+renderer.paragraph = function (text) {
+    return '<p>' + text.replace(/\n/g, '<br />') + '</p>';
+  }
 
 const nextConfig = {
     webpack: function (config, {
@@ -59,9 +64,9 @@ const nextConfig = {
                 {
                     loader: "markdown-loader",
                     options: {
-                        pedantic: true,
-                        breaks: true,
-                        gfm: true
+                        gfm: true,
+                        breaks:true,
+                        renderer
                     }
                 }
             ]

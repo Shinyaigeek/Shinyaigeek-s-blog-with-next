@@ -22,7 +22,7 @@ class HomePage extends React.Component {
           console.log(this.props)
           return(
               <div>
-                  <Home itemDatas={this.props.router.query.itemList}/>
+                  Error
               </div>
           )
       }
