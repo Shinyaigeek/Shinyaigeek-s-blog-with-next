@@ -1,11 +1,13 @@
 .item--card{
-    border: 1px solid black;
-    width: 60%;
-    margin: 30px auto;
 
     &__anchor{
         text-decoration: none;
         color: black;
+        width: 300px
     }
 }
 
+.item--card{
+    width: 300px;
+    margin: 24px auto;
+}
