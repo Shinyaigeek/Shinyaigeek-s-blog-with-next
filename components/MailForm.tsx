@@ -1,4 +1,5 @@
 import Input from "react-toolbox/lib/input";
+import { Button } from "react-toolbox/lib/button";
 
 import React from "react";
 
@@ -71,8 +72,8 @@ export default class MailForm extends React.Component<
 		return (
 			<div>
 				<Input
-                    type="text"
-                    value={this.state.yourName}
+					type="text"
+					value={this.state.yourName}
 					label="Your Name"
 					name="yourName"
 					onChange={(event: string) =>
@@ -80,8 +81,8 @@ export default class MailForm extends React.Component<
 					}
 				/>
 				<Input
-                    type="text"
-                    value={this.state.subject}
+					type="text"
+					value={this.state.subject}
 					label="Subject"
 					name="subject"
 					onChange={(event: string) =>
@@ -89,8 +90,8 @@ export default class MailForm extends React.Component<
 					}
 				/>
 				<Input
-                    type="email"
-                    value={this.state.yourAddress}
+					type="email"
+					value={this.state.yourAddress}
 					label="Your Email Address"
 					name="yourAddress"
 					onChange={(event: string) =>
@@ -99,14 +100,21 @@ export default class MailForm extends React.Component<
 				/>
 				<Input
 					type="text"
-                    multiline
-                    value={this.state.content}
+					multiline
+					value={this.state.content}
 					label="Content"
 					name="content"
 					onChange={(event: string) =>
 						this.handleChange(event, "content")
 					}
 				/>
+                <Button
+                    theme="button"
+                    label="SEND"
+                    raised
+                    ripple
+                    onClick={this.mailSubmit}
+                />
 			</div>
 		);
 	}

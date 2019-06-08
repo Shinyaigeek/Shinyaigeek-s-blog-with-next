@@ -1,6 +1,8 @@
 import React from 'react'
 
 import ReactMarkdown from 'react-markdown'
+import ShareButton from '../components/ShareButton';
+import MailForm from '../components/MailForm'
 
 import '../assets/css/post.scss'
 
@@ -11,6 +13,8 @@ export default function Post(props:any) {
     return (
         <div className="content">
             <ReactMarkdown source={content} escapeHtml={false}/>
+            <ShareButton />
+            <MailForm router={props.router.pathname}/>
         </div>
     )
 }

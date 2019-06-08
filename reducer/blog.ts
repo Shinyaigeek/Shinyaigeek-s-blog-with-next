@@ -8,16 +8,12 @@ const initialBlogState = {
 };
 
 const blog = (state = initialBlogState, action: any) => {
+	console.log(action)
 	switch (action.type) {
-		case actionTypes.SHARE_ON:
+		case actionTypes.SHARE_SWITCH:
 			return {
 				...state,
-				shareFlag: true
-			};
-		case actionTypes.SHARE_OFF:
-			return {
-				...state,
-				shareFlag: false
+				shareFlag: action.content
 			};
 		default:
 			return {

@@ -1,6 +1,7 @@
 import React from "react";
 import { withRouter } from 'next/router';
 import Layout from "../layout/Layout";
+import Welcome1 from '../components/Welcome1'
 
 import Home from '../views/Home'
 
@@ -22,6 +23,7 @@ class HomePage extends React.Component {
           console.log(this.props)
           return(
               <div>
+                  {/* <Welcome1 /> */}
                   <Home itemDatas={this.props.router.query.itemList}/>
               </div>
           )
