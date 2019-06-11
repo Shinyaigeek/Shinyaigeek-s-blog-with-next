@@ -1,16 +1,26 @@
-import React from 'react'
-import { withRouter } from 'next/router';
+import React, { useState } from "react";
+import { withRouter } from "next/router";
 import Layout from "../layout/Layout";
 
-import Post from '../views/Post'
+import PageWrapper from '../views/IndexWrapper'
+import Post from "../views/Post";
 
-function PostPage(props:any) {
-    console.log(props)
-    return (
-        <div>
-            <Post {...props}/>
-        </div>
-    )
+const fixHtml = (handleShareFlag:Function) => (flag:boolean) => {
+	if(flag){
+		document.querySelector('html').style.overflow = "hidden";
+	}else{
+		document.querySelector('html').style.overflow = "visible";
+	}
+	return handleShareFlag(flag)
 }
 
-export default withRouter(Layout(PostPage))
+function PostPage(props: any) {
+	const [shareFlag, handleShareFlag] = useState(false);
+	return (
+		<div>
+			<Post {...props} shareFlag={shareFlag} handleShareFlag={fixHtml(handleShareFlag)}/>
+		</div>
+	);
+}
+
+export default withRouter(Layout(PageWrapper(PostPage)));

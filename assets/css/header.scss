@@ -6,7 +6,7 @@
 .header{
     font-family:"Crayon";
     height: 15vh;
-    font-size: 48px;
+    font-size: 36px;
     color: #ffffff;
     background:#000000;
     position: fixed;
@@ -16,6 +16,9 @@
     top: 0px;
     padding: 6px 0px;
     z-index:999;
-    text-align: center;
-    
+    text-align: left;
+    padding-left: 10px;
+    padding-top: 10px;
+    vertical-align: middle;
+    margin: auto 100% auto 0;
 }

@@ -2,6 +2,8 @@ import React from 'react'
 import { Card, CardMedia, CardTitle, CardText } from 'react-toolbox/lib/card';
 import Link from 'next/link'
 
+import MiniTags from '../components/miniTags'
+
 import '../assets/css/item.scss'
 
 export default function Item(itemData:any) {
@@ -18,6 +20,7 @@ export default function Item(itemData:any) {
                         aspectRatio="wide"
                         image={Data.img}
                     />
+                    <MiniTags contents={Data.tag} />
                     <CardText>{Data.description}</CardText>
                 </Card>
             </a>

@@ -19,7 +19,6 @@ app
   .then(() => {
     const server = express()
 
-
     server.get('/p/:id', (req, res) => {
       const actualPage = '/post'
       const itemN = dirN('./items').length
@@ -33,20 +32,33 @@ app
     })
 
     server.get('/', (req, res) => {
-      console.log(77777)
       const itemN = dirN('./items').length
       const itemList = getFileContent(itemN / 2)
       const actualPage = '/'
       const HomeProps = {
         itemN: itemN / 2,
-        itemList: itemList
+        itemList: itemList,
       }
       app.render(req, res, actualPage, HomeProps)
     })
 
+    server.get('/about', (req, res) => {
+      const actualPage = '/about'
+      app.render(req, res, actualPage)
+    })
+
+    server.get('/get/homeinfo', (req, res) => {
+      const itemN = dirN('./items').length
+      const itemList = getFileContent(itemN / 2)
+      const HomeProps = {
+        itemN: itemN / 2,
+        itemList: itemList,
+      }
+      res.send(HomeProps)
+    })
+
     server.get('*', (req, res) => {
-      console.log(88888)
-      const actualPage = 'error'
+      const actualPage = '/error'
       app.render(req, res, actualPage)
     })
 

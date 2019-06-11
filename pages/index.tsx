@@ -1,34 +1,28 @@
-import React from "react";
-import { withRouter } from 'next/router';
+import React, { useState } from "react";
+import { withRouter } from "next/router";
 import Layout from "../layout/Layout";
-import Welcome1 from '../components/Welcome1'
+import Welcome1 from "../components/Welcome1";
 
-import Home from '../views/Home'
+import Home from "../views/Home";
 
-// function HomePage(props:any) {
-//     return (
-        
-//         <div>
-//             <Home itemDatas={props.router.query.itemList}/>
-//         </div>
-//     )
-// }
+import PageWrapper from '../views/IndexWrapper'
 
-class HomePage extends React.Component {
-    constructor(props:any){
-        super(props)
-    }
+import axios from 'axios'
 
-      render(){
-          console.log(this.props)
-          return(
-              <div>
-                  {/* <Welcome1 /> */}
-                  <Home itemDatas={this.props.router.query.itemList}/>
-              </div>
-          )
-      }
+function HomePage(props: any) {
+	const [page, handlePage] = useState(0);
+	const [reverse, handleReverse] =useState(false)
+	return (
+		<div>
+			<Home itemDatas={...props} page={page} handlePage={handlePage} reverse={reverse} handleReverse={handleReverse} />
+		</div>
+	);
 }
 
-
+// HomePage.getInitialProps = async function(){
+// 	const itemDatas = axios.get('/get/homeinfo')
+// 	debugger;
+// 	console.log(itemDatas)
+// 	return {itemDatas}
+// }
 export default withRouter(Layout(HomePage));

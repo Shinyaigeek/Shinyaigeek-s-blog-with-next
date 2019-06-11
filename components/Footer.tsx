@@ -10,7 +10,7 @@ export default class Footer extends Component {
     render() {
         return (
             <div className="footer">
-                2019 Shinyaigeek
+                <img src="/static/copyright.svg" className="copyright--icon"/>2019 Shinyaigeek
             </div>
         )
     }

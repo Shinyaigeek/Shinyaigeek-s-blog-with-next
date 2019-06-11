@@ -1,8 +1,11 @@
 .share--button__under{
     padding: 6px;
-    border:1px solid black;
+    border:1px solid #aaa;
+    box-shadow: 0 1px;
     border-radius: 20px;
     position: fixed;
     bottom: 50px;
     right: 50px;
+    z-index:999;
+    background-color: #FFFFFF;
 }
