@@ -1,13 +1,17 @@
-.item--card{
+// @import '~antd/dist/antd.css';
 
+.item--card{
+    width: 300px;
+    margin: 24px auto !important;
     &__anchor{
         text-decoration: none;
         color: black;
         width: 300px
     }
+
+    &__img{
+        height: 200px;
+        object-fit: contain;
+    }
 }
 
-.item--card{
-    width: 300px;
-    margin: 24px auto;
-}

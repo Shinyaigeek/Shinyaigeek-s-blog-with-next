@@ -1,5 +1,5 @@
-import Input from "react-toolbox/lib/input";
-import { Button } from "react-toolbox/lib/button";
+import {Input} from "antd";
+import { Button } from "antd";
 
 import React from "react";
 
@@ -47,7 +47,6 @@ export default class MailForm extends React.Component<
 	}
 
 	handleChange(e: string, where: string) {
-		console.log(this.state);
 		let state: State = this.state;
 		state[where] = e;
 		this.setState(state);
@@ -109,12 +108,11 @@ export default class MailForm extends React.Component<
 					}
 				/>
                 <Button
-                    theme="button"
-                    label="SEND"
-                    raised
-                    ripple
+					type="primary"
                     onClick={this.mailSubmit}
-                />
+                >
+				Send
+				</Button>
 			</div>
 		);
 	}

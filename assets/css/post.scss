@@ -1,14 +1,19 @@
+@import '~antd/dist/antd.css';
+
 .content{
+    font-family:sans-serif;
     width: 75%;
     margin: 12px auto;
 
 }
 
 .content--main__fixed{
+    font-family:sans-serif;
     position: fixed;
 }
 
 .blog{
+    font-family:sans-serif;
     img{
         width: 100%;
     }

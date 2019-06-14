@@ -1,23 +1,30 @@
 import React from 'react'
 
-import Chip from 'react-toolbox/lib/chip'
+import {Tag} from 'antd'
+
+import '../assets/css/tags.scss'
 
 type Tags = {
     tagName:string,
-    tagPath:string
+    tagPath:string,
+    tagNameEn:string,
+    tagColor:string
+}
+type Prop = {
+    props:Tags
 }
 
-function Tag(props:Tags,key:number){
+function Chip(props:Prop,key:number){
     return(
-        <Chip>{props.props.tagName}</Chip>
+        <Tag color={props.props.tagColor} id={props.props.tagPath} onClick={(e:any) => {e.target.getAttribute('id')}}>{props.props.tagName}</Tag>
     )
 }
 
-export default function Tags(tags:Tags[]) {
+export default function Tags(tags:Prop) {
     return (
-        <div>
+        <div className="tags">
             {tags.tags.map((tag:any,index:number)=> (
-                <Tag props={tag} key={index}/>
+                <Chip props={tag} key={index}/>
             ))}
         </div>
     )

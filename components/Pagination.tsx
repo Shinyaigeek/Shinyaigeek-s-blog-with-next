@@ -1,26 +1,28 @@
-import React from 'react'
+import React from "react";
 
-import ReactPaginate from 'react-paginate'
+import { Pagination as AntPagination}  from "antd";
 
-import '../assets/css/pagination.scss'
+import "../assets/css/pagination.scss";
 
 interface Props {
-    pageN:number,
-    handleChange:Function
+	itemN: number;
+    handleChange: Function;
+    currentPage:number
 }
 
-export default function Pagination(props:Props) {
-    return (
-        <div className="pagination">
-            <ReactPaginate
-            pageCount={props.pageN}
-            pageRangeDisplayed={2}
-            marginPagesDisplayed={50}
-            onPageChange={(e:any) => {props.handleChange(e.selected)}}
-            containerClassName="page--container"
-            previousLabel=""
-            nextLabel=""
-            />
-        </div>
-    )
+export default function Pagination(props: Props) {
+    console.log(props)
+	return (
+		<div className="pagination">
+			<AntPagination
+                simple
+                current={props.currentPage + 1}
+                // pageSize = {props.pageN}
+                total={props.itemN}
+				onChange={(e: any) => {
+					props.handleChange(e-1);
+				}}
+			/>
+		</div>
+	);
 }

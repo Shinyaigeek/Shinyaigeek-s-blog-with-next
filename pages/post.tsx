@@ -5,7 +5,7 @@ import Layout from "../layout/Layout";
 import PageWrapper from '../views/IndexWrapper'
 import Post from "../views/Post";
 
-const fixHtml = (handleShareFlag:Function) => (flag:boolean) => {
+const fixHtml:Function = (handleShareFlag:Function) => (flag:boolean) => {
 	if(flag){
 		document.querySelector('html').style.overflow = "hidden";
 	}else{

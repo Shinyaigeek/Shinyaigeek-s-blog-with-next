@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Switch from 'react-toolbox/lib/switch'
+import {Switch} from 'antd'
 
 interface SortProps {
     reverse:boolean,
@@ -8,12 +8,10 @@ interface SortProps {
 }
 
 export default function SortButton(props:SortProps) {
+    console.log(props)
     return (
         <div>
-            <Switch 
-                checked={props.reverse}
-                onChange={(event:any) => {console.log(event); return props.handleReverse(event)}}
-            />
+            <Switch checkedChildren="新しい順" unCheckedChildren="古い順" checked={!props.reverse} onChange={(e:any) => {props.handleReverse(!e)}}/>
         </div>
     )
 }

@@ -1,0 +1,29 @@
+.headings{
+    a{
+        display: block;
+        text-decoration: none;
+        color: #000000;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    border: 1px solid #aaa;
+    width: 80%;
+    margin: 30px auto;
+    border-radius:3px;
+    padding: 5px;
+}
+
+h3{
+    font-size: 20px;
+    &:before{
+        content:"";
+        background-color: #b3bfff;
+        border-radius: 4px;
+        width: 12px;
+        height:30px;
+        display:inline-block;
+        margin-right:12px;
+        position: relative;
+        top: 6px;
+    }
+}

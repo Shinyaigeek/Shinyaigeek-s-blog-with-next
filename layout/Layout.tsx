@@ -12,35 +12,51 @@ import '../assets/css/layout.scss'
 const tags = [
     {
         tagName:"競プロ",
-        tagPath:"Algo"
+        tagNameEn:"Code",
+        tagPath:"Algo",
+        tagColor:"orange"
     },
     {
         tagName:"Python",
-        tagPath:"Python"
+        tagPath:"Python",
+        tagNameEn:"Python",
+        tagColor:"blue"
     },
     {
         tagName:"プログラミング",
-        tagPath:"Programing"
+        tagPath:"Programing",
+        tagNameEn:"Programing",
+        tagColor:"cyan"
     },
     {
         tagName:"C/C++",
-        tagPath:"C"
+        tagPath:"C",
+        tagNameEn:"C/C++",
+        tagColor:"green"
     },
     {
         tagName:"JavaScript",
-        tagPath:"JavaScript"
+        tagPath:"JavaScript",
+        tagNameEn:"JavaScript",
+        tagColor:"volcano"
     },
     {
         tagName:"ブログ",
-        tagPath:"Blog"
+        tagPath:"Blog",
+        tagNameEn:"Blog",
+        tagColor:"magenta"
     },
     {
         tagName:"ポエム",
-        tagPath:"Poem"
+        tagPath:"Poem",
+        tagNameEn:"Poem",
+        tagColor:"lime"
     },
     {
         tagName:"React",
-        tagPath:"React"
+        tagPath:"React",
+        tagNameEn:"React",
+        tagColor:"geekblue"
     },
 ]
 

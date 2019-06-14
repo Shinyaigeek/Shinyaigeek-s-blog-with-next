@@ -22,7 +22,7 @@ app
     server.get('/p/:id', (req, res) => {
       const actualPage = '/post'
       const itemN = dirN('./items').length
-      const itemList = getFileContent(itemN / 2)
+      const itemList = getFileContent(itemN)
       const postIndex = req.params.id
       const postProps = {
         postIndex: postIndex,
@@ -33,7 +33,7 @@ app
 
     server.get('/', (req, res) => {
       const itemN = dirN('./items').length
-      const itemList = getFileContent(itemN / 2)
+      const itemList = getFileContent(itemN)
       const actualPage = '/'
       const HomeProps = {
         itemN: itemN / 2,

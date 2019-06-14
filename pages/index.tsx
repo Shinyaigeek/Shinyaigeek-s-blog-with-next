@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { withRouter } from "next/router";
 import Layout from "../layout/Layout";
-import Welcome1 from "../components/Welcome1";
 
 import Home from "../views/Home";
 
