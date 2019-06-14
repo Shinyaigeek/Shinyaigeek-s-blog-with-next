@@ -6,6 +6,7 @@ import MailForm from '../components/MailForm'
 import Content from '../components/Content'
 import ShareModal from '../components/ShareModal'
 import ThatsMe from '../components/ThatsMe'
+import Splash from '../components/Splash'
 
 import '../assets/css/post.scss'
 
@@ -15,10 +16,10 @@ export default function Post(props:any) {
     console.log(content)
     return (
         <div className="content">
-            {/* <div className={props.shareFlag?"content--main__fixed":"content--main"}> */}
             <div className="content--main">
                 <h1>{props.router.query.postInfo.name}</h1>
-                <Content content={content} />
+                {content && <Content content={content} />}
+                {!content && <Splash />}
                 <MailForm router={props.router.pathname}/>
                 <ThatsMe />
             </div>
