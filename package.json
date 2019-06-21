@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js"
+    "start": "NODE_ENV=production node server.js",
+    "export": "npm run build && next export",
+    "s":"next start",
+    "d":"next"
   },
   "repository": {
     "type": "git",
@@ -57,6 +60,7 @@
     "react-paginate": "^6.3.0",
     "react-redux": "^7.0.3",
     "react-transition-group": "^4.1.0",
+    "react-typing-animation": "^1.6.2",
     "redux": "^4.0.1",
     "sass-loader": "^7.1.0",
     "sass-resources-loader": "^2.0.1",

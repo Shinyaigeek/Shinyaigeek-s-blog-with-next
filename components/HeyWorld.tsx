@@ -1,12 +1,13 @@
-import React from 'react'
+import React from "react";
 
-import '../assets/css/heyworld.scss'
+import Typing from "react-typing-animation";
+
+import "../assets/css/heyworld.scss";
 
 export default function HeyWorld() {
-    return (
-        <div className="heyworld">
-            Hey!!<br />
-            World
-        </div>
-    )
+	return (
+		<Typing className="heyworld" speed={500}>
+			<span>Shinyai<br/>Geek</span>
+		</Typing>
+	);
 }

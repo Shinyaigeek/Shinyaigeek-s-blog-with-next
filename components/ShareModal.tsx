@@ -18,7 +18,7 @@ interface TState{
 }
 
 export default class ShareModal extends React.Component <TProps,TState> {
-    constructor(props:any){
+    constructor(props:TProps){
         super(props)
         // @ts-ignore
         const childrenHeight:number = this.props.children ? 43 * this.props.children.length:0;

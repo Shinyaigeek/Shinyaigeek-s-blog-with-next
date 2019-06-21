@@ -19,7 +19,7 @@ export default function Content(content:any) {
                 a.setAttribute('href','#' + index)
                 headings.appendChild(a)
             })
-            content.appendChild(headings)
+            content.insertBefore(headings,content.firstChild)
         }
     })
     return (

@@ -5,6 +5,10 @@ import React from "react";
 
 import * as emailjs from "emailjs-com";
 
+import '../assets/css/mailform.scss'
+
+const { TextArea } = Input;
+
 interface MailFormProps {
 	router: string;
 }
@@ -46,9 +50,10 @@ export default class MailForm extends React.Component<
 		this.mailSubmit = this.mailSubmit.bind(this);
 	}
 
-	handleChange(e: string, where: string) {
+	handleChange(e: any, where: string) {
+		const {value } = e.target
 		let state: State = this.state;
-		state[where] = e;
+		state[where] = value;
 		this.setState(state);
 	}
 
@@ -69,41 +74,41 @@ export default class MailForm extends React.Component<
 	render() {
 		console.log(this.props);
 		return (
-			<div>
+			<div className="mailform--box">
 				<Input
 					type="text"
 					value={this.state.yourName}
-					label="Your Name"
+					placeholder="Your Name"
 					name="yourName"
-					onChange={(event: string) =>
+					onChange={(event: any) =>
 						this.handleChange(event, "yourName")
 					}
 				/>
 				<Input
 					type="text"
 					value={this.state.subject}
-					label="Subject"
+					placeholder="Subject"
 					name="subject"
-					onChange={(event: string) =>
+					onChange={(event: any) =>
 						this.handleChange(event, "subject")
 					}
 				/>
 				<Input
 					type="email"
 					value={this.state.yourAddress}
-					label="Your Email Address"
+					placeholder="Your Email Address"
 					name="yourAddress"
-					onChange={(event: string) =>
+					onChange={(event: any) =>
 						this.handleChange(event, "yourAddress")
 					}
 				/>
-				<Input
+				<TextArea
 					type="text"
 					multiline
 					value={this.state.content}
-					label="Content"
+					placeholder="Content"
 					name="content"
-					onChange={(event: string) =>
+					onChange={(event: any) =>
 						this.handleChange(event, "content")
 					}
 				/>

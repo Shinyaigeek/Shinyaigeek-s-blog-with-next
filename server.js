@@ -3,6 +3,7 @@ const next = require('next')
 
 const dirN = require('./scripts/getFileNumber.js')
 const getFileContent = require('./scripts/getFileContent.js')
+const getFileTag = require('./scripts/getFileTag.js')
 
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({
@@ -42,8 +43,25 @@ app
       app.render(req, res, actualPage, HomeProps)
     })
 
+    server.get('/tag/:name', (req, res) => {
+      const actualPage = '/'
+      const itemN = dirN('./items').length
+      const tag = req.params.name
+      const itemList = getFileTag(tag,itemN)
+      const HomeProps = {
+        itemN: itemN / 2,
+        itemList: itemList,
+      }
+      app.render(req, res, actualPage, HomeProps)
+    })
+
     server.get('/about', (req, res) => {
       const actualPage = '/about'
+      app.render(req, res, actualPage)
+    })
+
+    server.get('/privacypolicy', (req, res) => {
+      const actualPage = '/privacypolicy'
       app.render(req, res, actualPage)
     })
 

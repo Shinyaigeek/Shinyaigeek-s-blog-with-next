@@ -22,6 +22,7 @@ export default function Pagination(props: Props) {
 				onChange={(e: any) => {
 					props.handleChange(e-1);
 				}}
+				className="page--container"
 			/>
 		</div>
 	);
