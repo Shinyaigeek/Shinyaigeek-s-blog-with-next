@@ -1,9 +1,10 @@
 const fs = require('fs')
+const marked = require('marked')
 
 const getContent = function(itemN) {
-    const content = fs.readFileSync("./items/" + itemN + ".md","utf8")
-    console.log(content)
-    return content
+    const content = marked(fs.readFileSync("./items/" + itemN + ".md","utf8"))
+    const markedContent = content.replace(/\n/g,"<br>")
+    return markedContent
 }
 
 module.exports = getContent

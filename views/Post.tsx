@@ -33,6 +33,7 @@ interface Props{
 }
 
 export default function Post(props:Props) {
+    console.log(props.router.query.content)
     // const content = require('../items/' + props.router.query.postIndex + ".md")
     return (
         <div className="content">
