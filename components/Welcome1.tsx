@@ -12,8 +12,8 @@ export default function Welcome1() {
 		<div className="welcome1">
             <WelcomeHeader />
 			<HeyWorld />
-			<Animation />
 			<ScrollDown />
+			<Animation />
 		</div>
 	);
 }

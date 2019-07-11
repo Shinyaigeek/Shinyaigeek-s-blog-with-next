@@ -33,9 +33,11 @@ export default function Home<Home>(props: any) {
 				reverse={props.reverse}
 				handleReverse={reverseItemsAndSwitch}
 			/>
-			{showItems.map((itemData: any, index: number) => (
-				<Item itemData={itemData} key={index} />
-			))}
+			<div className="blog--contents">
+				{showItems.map((itemData: any, index: number) => (
+					<Item itemData={itemData} key={index} />
+				))}
+			</div>
 			<Pagination
 				itemN={props.itemDatas.length}
 				handleChange={props.handlePage}

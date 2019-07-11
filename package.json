@@ -8,8 +8,8 @@
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
     "export": "npm run build && next export",
-    "s":"next start",
-    "d":"next"
+    "s": "next start",
+    "d": "next"
   },
   "repository": {
     "type": "git",

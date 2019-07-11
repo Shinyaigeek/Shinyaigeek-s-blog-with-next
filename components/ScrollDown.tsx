@@ -36,13 +36,7 @@ export default function ScrollDown() {
 		<div className="scroll--down__animation">
 			<TweenOne
 				animation={animation}
-				style={{
-					position: "absolute",
-                    transformOrigin: "center bottom",
-                    width:"10px",
-                    height:"10px",
-                    backgroundColor:"#FFFFFF"
-				}}
+                className="scroll--down__circle"
 			/>
 			<span>SCROLL DOWN</span>
 		</div>

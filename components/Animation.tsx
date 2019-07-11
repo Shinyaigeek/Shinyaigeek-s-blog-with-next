@@ -44,16 +44,7 @@ class Animation extends React.Component {
 	render() {
 		return (
 			<div
-				style={{
-					position: "absolute",
-					height: 250,
-					width: 250,
-					bottom: "10px",
-					right: "10px",
-					transformStyle: "preserve-3d",
-					transform:"perspective(5000px)",
-					overflow:"hidden"
-				}}
+				className="welcome--animation"
 			>
 				<TweenOne
 					style={{
@@ -68,29 +59,7 @@ class Animation extends React.Component {
 					<img
 						className="welcome--earth"
 						src="/static/earth.png"
-						style={{
-							width: "250px",
-							height: "250px",
-							position: "absolute",
-							overflow: "hidden",
-							transform: "translate3d(0,0,0px) perspective(5000px)",
-							transformStyle: "preserve-3d"
-						}}
 					/>
-				{/* </TweenOne>
-				<TweenOne
-					style={{
-						width: "90px",
-						height: "90px",
-						position: "relative",
-						bottom: "250px",
-						right: "100px",
-						transform: "translate3d(0,0,2px) perspective(5000px)",
-						transformStyle: "preserve-3d"
-					}}
-					animation={this.animation}
-					className="welcome--animation"
-				> */}
 					<Avatar
 						className="welcome--animation__img"
 						src="/static/icon.jpg"
