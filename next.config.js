@@ -14,6 +14,7 @@ const marked = require("marked");
 const dirN = require('./scripts/getFileNumber.js')
 const getFileContent = require('./scripts/getFileContent.js')
 const getFileTag = require('./scripts/getFileTag.js')
+const getContent = require('./scripts/getContent.js')
 
 const renderer = new marked.Renderer();
 renderer.paragraph = function (text) {
@@ -24,7 +25,7 @@ renderer.paragraph = function (text) {
 const itemN = dirN('./items').length
 const itemList = getFileContent(itemN)
 
-const tags = ["Algo","Python","Programing","C","JavaScript","Blog","Poem","React"]
+const tags = ["Algo", "Python", "Programing", "C", "JavaScript", "Blog", "Poem", "React"]
 
 const returnPosts = function (itemList, itemN) {
     let posts = {};
@@ -32,16 +33,18 @@ const returnPosts = function (itemList, itemN) {
         let query = {};
         query["postIndex"] = i;
         query['postInfo'] = itemList[i - 1]
+        const content = getContent(i)
+        query["content"] = content;
         let path = "/p/" + i;
         posts[path] = {
-            page:"/post",
-            query:query
+            page: "/post",
+            query: query
         }
     }
     return posts
 }
 
-const returnHome = function(itemList, itemN,tags){
+const returnHome = function (itemList, itemN, tags) {
     let items = {}
     const page = "/"
     let query = {};
@@ -49,20 +52,20 @@ const returnHome = function(itemList, itemN,tags){
     query["itemList"] = itemList;
     query['tag'] = null;
     items["/"] = {
-        page:page,
-        query:query,
+        page: page,
+        query: query,
     }
     tags.forEach((tag) => {
         let query = {};
-        const itemListTag = getFileTag(tag,itemN);
+        const itemListTag = getFileTag(tag, itemN);
         const itemNTag = itemListTag.length
         query['itemN'] = itemNTag;
         query['itemList'] = itemListTag;
         query['tag'] = tag;
         const path = "/tag/" + tag;
         items[path] = {
-            page:page,
-            query:query
+            page: page,
+            query: query
         }
     })
     return items
@@ -78,17 +81,17 @@ const nextConfig = {
             buildId
         }
     ) {
-        const posts = returnPosts(itemList,itemN)
-        const homes = returnHome(itemList,itemN,tags)
+        const posts = returnPosts(itemList, itemN)
+        const homes = returnHome(itemList, itemN, tags)
         const others = {
-            "privacypolicy":{
-                page:"privacypolicy",
-                query:null
+            "privacypolicy": {
+                page: "privacypolicy",
+                query: null
             }
         }
         let all = {};
-        all = Object.assign(others,posts)
-        all = Object.assign(all,homes)
+        all = Object.assign(others, posts)
+        all = Object.assign(all, homes)
         // return {
         //     '/': {
         //         page: '/',

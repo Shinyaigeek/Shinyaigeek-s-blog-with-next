@@ -17,7 +17,8 @@ type PostInfo = {
 
 type query = {
     postIndex:string,
-    postInfo:PostInfo
+    postInfo:PostInfo,
+    content:string
 }
 
 type querywrapper= {
@@ -28,17 +29,16 @@ type querywrapper= {
 interface Props{
     router:querywrapper,
     handleShareFlag:Function,
-    shareFlag:boolean
+    shareFlag:boolean,
 }
 
 export default function Post(props:Props) {
-    const content = require('../items/' + props.router.query.postIndex + ".md")
+    // const content = require('../items/' + props.router.query.postIndex + ".md")
     return (
         <div className="content">
             <div className="content--main">
                 <h1>{props.router.query.postInfo.name}</h1>
-                {content && <Content content={content} />}
-                {!content && <Splash />}
+                <Content content={props.router.query.content} />
                 <MailForm router={props.router.pathname}/>
                 <ThatsMe />
             </div>
