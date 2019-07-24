@@ -1,20 +1,47 @@
 @import '~antd/dist/antd.css';
 
-.content{
-    font-family:sans-serif;
+.content {
+    font-family: sans-serif;
     width: 75%;
     margin: 12px auto;
 
 }
 
-.content--main__fixed{
-    font-family:sans-serif;
+.content--main__fixed {
+    font-family: sans-serif;
     position: fixed;
 }
 
-.blog{
-    font-family:sans-serif;
-    img{
+.blog {
+    font-family: sans-serif;
+
+    img {
         width: 100%;
+    }
+}
+
+.share {
+    &--Twitter {
+        &__icon {
+            img {
+                margin: 0;
+            }
+        }
+    }
+
+    &--Facebook {
+        &__icon {
+            img {
+                margin: 0;
+            }
+        }
+    }
+
+    &--Linkedin {
+        &__icon {
+            img {
+                margin: 0;
+            }
+        }
     }
 }

@@ -1,17 +1,23 @@
 import React from "react";
-import PropTypes from "prop-types";
 import TweenOne from "rc-tween-one";
 import PathPlugin from "rc-tween-one/lib/plugin/PathPlugin";
 
 import { Avatar } from "antd";
 
 import "../assets/css/animation.scss";
-import { url } from "inspector";
 import BezierPlugin from "rc-tween-one/lib/plugin/BezierPlugin";
 TweenOne.plugins.push(BezierPlugin);
 TweenOne.plugins.push(PathPlugin);
 
 interface Props {}
+
+interface Animation {
+	path:string,
+	p:string,
+	easePath:string,
+	animation:Object,
+	animation2:Object,
+}
 
 class Animation extends React.Component {
 	constructor(props: Props) {
@@ -26,19 +32,10 @@ class Animation extends React.Component {
 			duration: 5000,
 			repeat: -1,
 			ease: TweenOne.easing.path(this.easePath, { lengthPixel: 2800 }),
-			type: "rotate"
+			type: "to"
 		};
 		this.animation2 = {
-			bezier: {
-				type: "quardratic",
-				autoRotate: true,
-				vars: [
-					{ x: 150, y: 150 },
-					{ x: 70, y: 150 },
-					{ x: 70, y: 70 },
-					{ x: 150, y: 70 }
-				]
-			},
+			z:100,
 			duration: 5000,
 			repeat: -1
 		};
@@ -47,66 +44,36 @@ class Animation extends React.Component {
 	render() {
 		return (
 			<div
-				style={{
-					position: "absolute",
-					height: 250,
-					width: 250,
-					bottom: "10px",
-					right: "10px"
-					// overflow: "hidden"
-				}}
+				className="welcome--animation"
 			>
-				<img
-					className="welcome--earth"
-					src="/static/earth.png"
-					style={{
-						width: "250px",
-						height: "250px",
-						position: "absolute",
-						overflow: "hidden",
-						transform: "translate(150,150,50)"
-					}}
-				/>
-				{/* <clipPath id="clip-path-2" height={250} width={250} x = {0} y = {0} style={{height:"250px",width:"250px",position:"absolute"}}> */}
-				{/* <use
-						xlinkHref="#clip-path2"
-						fill="white"
-						transform="translate(-30, -40)"
-					/>
-				</clipPath>
 				<TweenOne
 					style={{
-						width: "90px",
-						height: "90px",
-						position: "relative",
-						bottom: "-10px",
-						right: "100px",
-						transform: "translateZ(10,50,300,120),rotate(-16)",
-						zIndex: "500"
+						transform: "translate3d(0,0,1px) perspective(5000px)",
+						transformStyle: "preserve-3d",
+						width: "250px",
+						height: "250px",
 					}}
-					clip-path="url(#clip-path-2)"
-					animation={this.animation}
 					className="welcome--animation"
+					animation={this.animation}
 				>
+					<img
+						className="welcome--earth"
+						src="/static/earth.png"
+					/>
 					<Avatar
 						className="welcome--animation__img"
 						src="/static/icon.jpg"
 						size={80}
-						style={{ zIndex: "500" }}
+						style={{
+							overflow: "hidden",
+							transform: "translate3d(0,0,-2px) perspective(5000px)",
+							transformStyle: "preserve-3d"
+						}}
 					/>
-				</TweenOne> */}
-				<TweenOne animation={this.animation2} style={{ color: "red" }}>
-					aaaaa
 				</TweenOne>
 			</div>
 		);
 	}
 }
-
-Animation.propTypes = {
-	children: PropTypes.any,
-	className: PropTypes.string,
-	paused: PropTypes.bool
-};
 
 export default Animation;

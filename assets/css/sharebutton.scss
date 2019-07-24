@@ -3,9 +3,9 @@
     border:1px solid #aaa;
     box-shadow: 0 1px;
     border-radius: 20px;
-    position: fixed;
+    position: fixed !important;
     bottom: 50px;
     right: 50px;
     z-index:999;
-    background-color: #FFFFFF;
+    background-color: #FFFFFF !important;
 }

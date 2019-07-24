@@ -4,24 +4,16 @@ import Layout from "../layout/Layout";
 
 import Home from "../views/Home";
 
-import PageWrapper from '../views/IndexWrapper'
-
-import axios from 'axios'
-
 function HomePage(props: any) {
 	const [page, handlePage] = useState(0);
-	const [reverse, handleReverse] =useState(false)
+	const [reverse, handleReverse] =useState(false);
+	const itemList = props.router.query.itemList;
+	const [items,handleItems] = useState(itemList)
+	console.log(props)
 	return (
 		<div>
-			<Home itemDatas={...props} page={page} handlePage={handlePage} reverse={reverse} handleReverse={handleReverse} />
+			<Home itemDatas={items} handleItems={handleItems} page={page} handlePage={handlePage} reverse={reverse} handleReverse={handleReverse} />
 		</div>
 	);
 }
-
-// HomePage.getInitialProps = async function(){
-// 	const itemDatas = axios.get('/get/homeinfo')
-// 	debugger;
-// 	console.log(itemDatas)
-// 	return {itemDatas}
-// }
 export default withRouter(Layout(HomePage));

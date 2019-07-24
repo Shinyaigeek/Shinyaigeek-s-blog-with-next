@@ -7,11 +7,22 @@ import MiniTags from '../components/miniTags'
 import '../assets/css/item.scss'
 // import 'antd/dist/antd.css'
 
+type Items = {
+    path:string,
+    img:string,
+    description:string,
+    name:string,
+    tag:string[]
+}
+
+interface ItemData{
+    itemData:Items
+}
+
 const {Meta} = Card;
 
-export default function Item(itemData:any) {
+export default function Item(itemData:ItemData) {
     const Data = itemData.itemData
-    console.log(Data)
     return (
         <Link prefetch href={"p" + Data.path} >
             <a className="item--card__anchor">

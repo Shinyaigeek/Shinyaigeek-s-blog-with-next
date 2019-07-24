@@ -1,0 +1,18 @@
+.scroll--down__animation {
+    color: #FFFFFF;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    text-align: center;
+
+    .scroll--down__circle {
+        transform-origin: center bottom;
+        width: 8px;
+        height: 8px;
+        background-color: #FFFFFF;
+        margin: 0 auto;
+        border:1px solid #FFFFFF;
+        border-radius:1px
+    }
+}
