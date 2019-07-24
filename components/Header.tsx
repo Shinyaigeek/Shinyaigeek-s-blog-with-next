@@ -9,6 +9,7 @@ export default function Header() {
 		<div className="header">
 			<Link prefetch href="/">
 				<a href="/" className="toHome">
+					<img src="/static/icon_transparent.png" />
 					しにゃいの学習帳
 				</a>
 			</Link>
@@ -34,9 +35,7 @@ export default function Header() {
 						</a>
 					</Link>
 				</div>
-                <div className="to">
-                    コンタクト
-                </div>
+				<div className="to">コンタクト</div>
 			</div>
 		</div>
 	);
