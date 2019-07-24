@@ -89,15 +89,6 @@ const nextConfig = {
         let all = {};
         all = Object.assign(others,posts)
         all = Object.assign(all,homes)
-        // return {
-        //     '/': {
-        //         page: '/',
-        //         query: HomeProps
-        //     },
-        //     '/about': {
-        //         page: '/about'
-        //     },
-        // }
         return all
     },
     webpack: function (config, {

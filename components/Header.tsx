@@ -1,18 +1,26 @@
-import React from 'react'
+import React from "react";
 
-// import Link from 'next/link'
+import Link from "next/link";
 
-import '../assets/css/header.scss'
+import "../assets/css/header.scss";
 
 export default function Header() {
-    return (
-        // <Link prefetch href={"http://localhost:3000/"}>
-            <a href="/">
-                <div className="header">
-                    しにゃいの学習帳
-                </div>
-            </a>
-        // {/* </Link> */}
-    )
+	return (
+		<div className="header">
+			<Link prefetch href="/">
+				<a href="/" className="toHome">しにゃいの学習帳</a>
+			</Link>
+            <div className="contents">
+                <Link prefetch href="/">
+                    <a href="/" className="toHome">ブログ</a>
+                </Link>
+                <Link prefetch href="/">
+                    <a href="/" className="toHome">プロフィール</a>
+                </Link>
+                <Link prefetch href="/">
+                    <a href="/" className="toHome">作品集</a>
+                </Link>
+            </div>
+		</div>
+	);
 }
-
