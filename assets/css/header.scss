@@ -12,7 +12,8 @@
     width: 100vw;
     font-size: 36px;
     color: $theme_text;
-    background: $theme_background;
+    background: $theme_header;
+    box-shadow: 1px 1px 1px #544854;
     position: fixed;
     width: 100%;
     left: 0px;
@@ -187,8 +188,8 @@
     left: 0;
     width:100vw;
     height: 90vh;
-    color: $theme_background;
-    background: $theme_text;
+    color: $theme_text;
+    background: $menu_background;
 
     .to {
         font-family: Crayon;
@@ -197,7 +198,7 @@
         margin:15px auto 15px 30px;
         a{
             text-decoration: none;
-            color: $theme_background;
+            color: $theme_text;
         }
     }
 }
