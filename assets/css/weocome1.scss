@@ -9,6 +9,12 @@
     bottom: 0;
     margin-bottom: 100vh;
     z-index:999;
+
+    .banana{
+        height: 200px;
+        margin: 20px 20px;
+        object-fit: contain;
+    }
 }
 
 .icon{
