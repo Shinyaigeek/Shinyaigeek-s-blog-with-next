@@ -11,8 +11,8 @@ const { TextArea } = Input;
 
 interface MailFormProps {
 	router: string;
-	contactFlag:boolean;
-	handleContactFlag:Function
+	contactFlag: boolean;
+	handleContactFlag: Function;
 }
 
 interface MailFormState {
@@ -75,14 +75,19 @@ export default class MailForm extends React.Component<
 
 	render() {
 		return (
-			<div className="mailform--box">
-				<Modal
-					title="Basic Modal"
-					visible={this.props.contactFlag}
-					onCancel={() => this.props.handleContactFlag(false)}
-				>
+			<Modal
+				title="Contact Me"
+				visible={this.props.contactFlag}
+				onCancel={() => this.props.handleContactFlag(false)}
+				onOk={this.mailSubmit}
+				className="modal"
+				width={300}
+			>
+				<div className="name">
+					<span className="text">名前：</span>
 					<Input
 						type="text"
+						className="form"
 						value={this.state.yourName}
 						placeholder="Your Name"
 						name="yourName"
@@ -90,6 +95,9 @@ export default class MailForm extends React.Component<
 							this.handleChange(event, "yourName")
 						}
 					/>
+				</div>
+				<div className="subject">
+					<span className="text">件名：</span>
 					<Input
 						type="text"
 						value={this.state.subject}
@@ -98,31 +106,32 @@ export default class MailForm extends React.Component<
 						onChange={(event: any) =>
 							this.handleChange(event, "subject")
 						}
+						className="form"
 					/>
-					<Input
-						type="email"
-						value={this.state.yourAddress}
-						placeholder="Your Email Address"
-						name="yourAddress"
-						onChange={(event: any) =>
-							this.handleChange(event, "yourAddress")
-						}
-					/>
-					<TextArea
-						type="text"
-						multiline
-						value={this.state.content}
-						placeholder="Content"
-						name="content"
-						onChange={(event: any) =>
-							this.handleChange(event, "content")
-						}
-					/>
-					<Button type="primary" onClick={this.mailSubmit}>
-						Send
-					</Button>
-				</Modal>
-			</div>
+				</div>
+				<div className="mailaddress">
+				<span className="text">メールアドレス：</span>
+				<Input
+					type="email"
+					value={this.state.yourAddress}
+					placeholder="Your Email Address"
+					name="yourAddress"
+					onChange={(event: any) =>
+						this.handleChange(event, "yourAddress")
+					}
+					className="form"
+				/>
+				</div>
+				<TextArea
+					value={this.state.content}
+					placeholder="Content"
+					name="content"
+					onChange={(event: any) =>
+						this.handleChange(event, "content")
+					}
+					autosize={{ minRows: 5 }}
+				/>
+			</Modal>
 		);
 	}
 }
