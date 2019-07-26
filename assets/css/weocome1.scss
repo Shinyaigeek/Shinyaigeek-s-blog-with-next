@@ -1,7 +1,9 @@
+@import "./_core/variable.scss";
+
 .welcome1{
     height: 90vh;
     width: 100vw;
-    background-color: #000000;
+    background-color: $theme_background;
     position: absolute;
     top: 10vh;
     left: 0;
@@ -9,6 +11,12 @@
     bottom: 0;
     margin-bottom: 100vh;
     z-index:999;
+
+    .banana{
+        height: 200px;
+        margin: 20px 20px;
+        object-fit: contain;
+    }
 }
 
 .icon{
