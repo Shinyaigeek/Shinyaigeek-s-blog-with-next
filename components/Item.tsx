@@ -28,6 +28,7 @@ export default function Item(itemData:ItemData) {
             <a className="item--card__anchor">
                 <Card className="item--card"
                     bordered={true}
+                    hoverable={true}
                     cover={<img
                         src={Data.img}
                         className="item--card__img"
