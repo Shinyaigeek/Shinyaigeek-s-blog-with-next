@@ -1,17 +1,18 @@
 import React from "react";
 
-import { Avatar } from "antd";
+import { Button, Icon } from "antd";
 
 import "../assets/css/sharebutton.scss";
 
 export default function ShareButton(props: any) {
-	console.log(props);
 	return (
-		<Avatar
-			onClick={() => props.handleShareFlag(true)}
-			src="/static/ShareButton.svg"
+		<Button
+			type="primary"
+			shape="circle"
+			icon="share-alt"
+			size="large"
 			className="share--button__under"
-			size={45}
+			onClick={() => {props.handleShareFlag(true)}}
 		/>
 	);
 }

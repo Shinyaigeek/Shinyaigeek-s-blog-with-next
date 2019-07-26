@@ -78,7 +78,7 @@ const Layout = (ChildComponent: any) =>
 				</Head>
 				<Header menuFlag={menuFlag} handleMenuFlag={handleMenuFlag} contactFlag={contactFlag} handleContactFlag={handleContactFlag}/>
 				<div className="notHeader">
-					<ChildComponent {...props} />
+					<ChildComponent {...props} contactFlag={contactFlag} handleContactFlag={handleContactFlag}/>
 					<Tags tags={tags} handleTag={props.handleTag} />
 					<Footer />
 				</div>
