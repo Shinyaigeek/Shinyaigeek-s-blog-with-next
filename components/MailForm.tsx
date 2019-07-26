@@ -1,16 +1,18 @@
-import {Input} from "antd";
-import { Button } from "antd";
+import { Input } from "antd";
+import { Modal, Button } from "antd";
 
 import React from "react";
 
 import * as emailjs from "emailjs-com";
 
-import '../assets/css/mailform.scss'
+import "../assets/css/mailform.scss";
 
 const { TextArea } = Input;
 
 interface MailFormProps {
 	router: string;
+	contactFlag:boolean;
+	handleContactFlag:Function
 }
 
 interface MailFormState {
@@ -51,7 +53,7 @@ export default class MailForm extends React.Component<
 	}
 
 	handleChange(e: any, where: string) {
-		const {value } = e.target
+		const { value } = e.target;
 		let state: State = this.state;
 		state[where] = value;
 		this.setState(state);
@@ -72,52 +74,54 @@ export default class MailForm extends React.Component<
 	}
 
 	render() {
-		console.log(this.props);
 		return (
 			<div className="mailform--box">
-				<Input
-					type="text"
-					value={this.state.yourName}
-					placeholder="Your Name"
-					name="yourName"
-					onChange={(event: any) =>
-						this.handleChange(event, "yourName")
-					}
-				/>
-				<Input
-					type="text"
-					value={this.state.subject}
-					placeholder="Subject"
-					name="subject"
-					onChange={(event: any) =>
-						this.handleChange(event, "subject")
-					}
-				/>
-				<Input
-					type="email"
-					value={this.state.yourAddress}
-					placeholder="Your Email Address"
-					name="yourAddress"
-					onChange={(event: any) =>
-						this.handleChange(event, "yourAddress")
-					}
-				/>
-				<TextArea
-					type="text"
-					multiline
-					value={this.state.content}
-					placeholder="Content"
-					name="content"
-					onChange={(event: any) =>
-						this.handleChange(event, "content")
-					}
-				/>
-                <Button
-					type="primary"
-                    onClick={this.mailSubmit}
-                >
-				Send
-				</Button>
+				<Modal
+					title="Basic Modal"
+					visible={this.props.contactFlag}
+					onCancel={() => this.props.handleContactFlag(false)}
+				>
+					<Input
+						type="text"
+						value={this.state.yourName}
+						placeholder="Your Name"
+						name="yourName"
+						onChange={(event: any) =>
+							this.handleChange(event, "yourName")
+						}
+					/>
+					<Input
+						type="text"
+						value={this.state.subject}
+						placeholder="Subject"
+						name="subject"
+						onChange={(event: any) =>
+							this.handleChange(event, "subject")
+						}
+					/>
+					<Input
+						type="email"
+						value={this.state.yourAddress}
+						placeholder="Your Email Address"
+						name="yourAddress"
+						onChange={(event: any) =>
+							this.handleChange(event, "yourAddress")
+						}
+					/>
+					<TextArea
+						type="text"
+						multiline
+						value={this.state.content}
+						placeholder="Content"
+						name="content"
+						onChange={(event: any) =>
+							this.handleChange(event, "content")
+						}
+					/>
+					<Button type="primary" onClick={this.mailSubmit}>
+						Send
+					</Button>
+				</Modal>
 			</div>
 		);
 	}

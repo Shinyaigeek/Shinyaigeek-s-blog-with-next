@@ -5,6 +5,7 @@ import Head from "next/head";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Tags from "../components/Tags";
+import MailForm from "../components/MailForm"
 
 import "../assets/css/layout.scss";
 
@@ -81,6 +82,7 @@ const Layout = (ChildComponent: any) =>
 					<Tags tags={tags} handleTag={props.handleTag} />
 					<Footer />
 				</div>
+				<MailForm router="layout" contactFlag={contactFlag} handleContactFlag={handleContactFlag}/>
 			</div>
 		);
 	};
