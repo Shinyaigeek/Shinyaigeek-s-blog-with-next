@@ -6,7 +6,14 @@ import { Button, Drawer } from "antd";
 
 import "../assets/css/header.scss";
 
-export default function Header(props: any) {
+interface Props {
+	contactFlag:boolean;
+	handleContactFlag:Function;
+	menuFlag:boolean;
+	handleMenuFlag:Function
+}
+
+export default function Header(props: Props) {
 	return (
 		<div className="header">
 			<div className="title">
@@ -39,7 +46,7 @@ export default function Header(props: any) {
 						</a>
 					</Link>
 				</div>
-				<div className="to">コンタクト</div>
+				<div className="to" onClick={() => {props.handleContactFlag(true)}}>コンタクト</div>
 			</div>
 			<div className="contents_hamberger">
 				<div
@@ -84,7 +91,7 @@ export default function Header(props: any) {
 								</a>
 							</Link>
 						</div>
-						<div className="to">コンタクト</div>
+						<div className="to" onClick={() => {props.handleContactFlag(true)}}>コンタクト</div>
 					</div>
 				</Drawer>
 			</div>
