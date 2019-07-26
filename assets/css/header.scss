@@ -1,3 +1,5 @@
+@import "./_core/variable.scss";
+
 @font-face {
     font-family: "Crayon";
     src: url("../font/crayon_1-1.ttf");
@@ -9,8 +11,8 @@
     height: 10vh;
     width: 100vw;
     font-size: 36px;
-    color: #FAF7FC;
-    background: #030203;
+    color: $theme_text;
+    background: $theme_background;
     position: fixed;
     width: 100%;
     left: 0px;
@@ -33,7 +35,8 @@
 
     .toHome {
         text-decoration: none;
-        color: #FBFAFC;
+        color: $theme_text;
+        font-size: 30px;
 
         img {
             height: 100%;
@@ -60,7 +63,7 @@
                 content: ' ';
                 width: 100%;
                 height: 2px;
-                background: #FAF7FC;
+                background: $theme_text;
                 transform: scale(0, 1);
                 transform-origin: center top;
                 transition: transform .3s;
@@ -75,7 +78,7 @@
     .contents_hamberger {
 
         .hamberger--button {
-            color: white;
+            color:$theme_text;
             position: absolute;
 
             &__off {
@@ -125,23 +128,23 @@
             right: 0;
             width: 100%;
             height: 4px;
-            background-color: #fff;
+            background-color: $theme_text;
             border-radius: 4px;
         }
 
         .menu-trigger span:nth-of-type(1) {
             top: 0;
-            background-color: white;
+            background-color: $theme_text;
         }
 
         .menu-trigger span:nth-of-type(2) {
             top: 15px;
-            background-color: white;
+            background-color: $theme_text;
         }
 
         .menu-trigger span:nth-of-type(3) {
             bottom: 0;
-            background-color: white;
+            background-color: $theme_text;
         }
 
         .menu-trigger.active span:nth-of-type(1) {
@@ -164,7 +167,7 @@
     }
 
     .contents_hamberger {
-        contents: block;
+        display: block;
     }
 
     @media(min-width:1000px) {
@@ -173,7 +176,28 @@
         }
 
         .contents_hamberger {
-            contents: none;
+            display: none;
+        }
+    }
+}
+
+.menu--list {
+    position: absolute;
+    top: 10vh;
+    left: 0;
+    width:100vw;
+    height: 90vh;
+    color: $theme_background;
+    background: $theme_text;
+
+    .to {
+        font-family: Crayon;
+        font-size: 42px;
+        text-decoration: none;
+        margin:15px auto 15px 30px;
+        a{
+            text-decoration: none;
+            color: $theme_background;
         }
     }
 }
