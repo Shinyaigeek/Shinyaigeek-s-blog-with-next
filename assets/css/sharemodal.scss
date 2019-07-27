@@ -5,6 +5,7 @@
     border: 1px solid #ffffff;
     border-radius: 13px;
     position: fixed;
+    padding: 5px;
     left: 0px;
     right: 0px;
     z-index: 999;
@@ -55,9 +56,14 @@
   
     *{
       padding: 0px 0;
-      margin: 15px 0;
       height: 33px;
       font-size: 5vh;
+    }
+
+    div{
+      margin: 14px;
+      text-align: center;
+      font-size: 24px;
     }
   
   
@@ -74,11 +80,11 @@
         background-color: #e6ecf0;
         border-radius: 999px;
         text-align: center;
-        padding: 5px 0;
         width: 93%;
+        padding: 0;
         margin: 0 auto;
         margin-top: 24px;
-        height: 40px;
+        height: min-content;
       }
     }
   
