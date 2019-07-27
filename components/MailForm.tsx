@@ -1,16 +1,18 @@
-import {Input} from "antd";
-import { Button } from "antd";
+import { Input } from "antd";
+import { Modal } from "antd";
 
 import React from "react";
 
 import * as emailjs from "emailjs-com";
 
-import '../assets/css/mailform.scss'
+import "../assets/css/mailform.scss";
 
 const { TextArea } = Input;
 
 interface MailFormProps {
 	router: string;
+	contactFlag: boolean;
+	handleContactFlag: Function;
 }
 
 interface MailFormState {
@@ -51,13 +53,13 @@ export default class MailForm extends React.Component<
 	}
 
 	handleChange(e: any, where: string) {
-		const {value } = e.target
+		const { value } = e.target;
 		let state: State = this.state;
 		state[where] = value;
 		this.setState(state);
 	}
 
-	mailSubmit() {
+	async mailSubmit() {
 		const template_params = {
 			reply_to: this.state.yourAddress,
 			subject: this.state.subject,
@@ -68,57 +70,69 @@ export default class MailForm extends React.Component<
 		var service_id = "default_service";
 		var template_id = "template_vmKwN61k";
 		var user_id = "user_lxYZJTHqNDAhtluEIHAmV";
-		emailjs.send(service_id, template_id, template_params, user_id);
+		await emailjs.send(service_id, template_id, template_params, user_id)
+		return this.props.handleContactFlag(false);
 	}
 
 	render() {
-		console.log(this.props);
 		return (
-			<div className="mailform--box">
-				<Input
-					type="text"
-					value={this.state.yourName}
-					placeholder="Your Name"
-					name="yourName"
-					onChange={(event: any) =>
-						this.handleChange(event, "yourName")
-					}
-				/>
-				<Input
-					type="text"
-					value={this.state.subject}
-					placeholder="Subject"
-					name="subject"
-					onChange={(event: any) =>
-						this.handleChange(event, "subject")
-					}
-				/>
-				<Input
-					type="email"
-					value={this.state.yourAddress}
-					placeholder="Your Email Address"
-					name="yourAddress"
-					onChange={(event: any) =>
-						this.handleChange(event, "yourAddress")
-					}
-				/>
+			<Modal
+				title="Contact Me"
+				visible={this.props.contactFlag}
+				onCancel={() => this.props.handleContactFlag(false)}
+				onOk={this.mailSubmit}
+				className="modal"
+				width={300}
+			>
+				<div className="name">
+					<span className="text">名前：</span>
+					<Input
+						type="text"
+						className="form"
+						value={this.state.yourName}
+						placeholder="Your Name"
+						name="yourName"
+						onChange={(event: any) =>
+							this.handleChange(event, "yourName")
+						}
+					/>
+				</div>
+				<div className="subject">
+					<span className="text">件名：</span>
+					<Input
+						type="text"
+						value={this.state.subject}
+						placeholder="Subject"
+						name="subject"
+						onChange={(event: any) =>
+							this.handleChange(event, "subject")
+						}
+						className="form"
+					/>
+				</div>
+				<div className="mailaddress">
+					<span className="text">メールアドレス：</span>
+					<Input
+						type="email"
+						value={this.state.yourAddress}
+						placeholder="Your Email Address"
+						name="yourAddress"
+						onChange={(event: any) =>
+							this.handleChange(event, "yourAddress")
+						}
+						className="form"
+					/>
+				</div>
 				<TextArea
-					type="text"
-					multiline
 					value={this.state.content}
 					placeholder="Content"
 					name="content"
 					onChange={(event: any) =>
 						this.handleChange(event, "content")
 					}
+					autosize={{ minRows: 5 }}
 				/>
-                <Button
-					type="primary"
-                    onClick={this.mailSubmit}
-                >
-				Send
-				</Button>
-			</div>
+			</Modal>
 		);
 	}
 }

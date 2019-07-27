@@ -1,34 +1,36 @@
-import React from 'react'
+import React from "react";
 
-import ShareButton from '../components/ShareButton';
-import MailForm from '../components/MailForm'
-import Content from '../components/Content'
-import ShareModal from '../components/ShareModal'
-import ThatsMe from '../components/ThatsMe'
-import Splash from '../components/Splash'
+import ShareButton from "../components/ShareButton";
+import MailForm from "../components/MailForm";
+import Content from "../components/Content";
+import ShareModal from "../components/ShareModal";
+import ThatsMe from "../components/ThatsMe";
+import Splash from "../components/Splash";
 
-import {Icon} from 'antd'
+import { Avatar, Button, Icon } from "antd";
 
-import '../assets/css/post.scss'
+import "../assets/css/post.scss";
 
 type PostInfo = {
-    name:string
-}
+	name: string;
+};
 
 type query = {
-    postIndex:string,
-    postInfo:PostInfo
-}
+	postIndex: string;
+	postInfo: PostInfo;
+};
 
-type querywrapper= {
-    query:query,
-    pathname:string,
-}
+type querywrapper = {
+	query: query;
+	pathname: string;
+};
 
-interface Props{
-    router:querywrapper,
-    handleShareFlag:Function,
-    shareFlag:boolean
+interface Props {
+	router: querywrapper;
+	handleShareFlag: Function;
+    shareFlag: boolean;
+    contactFlag:boolean;
+    handleContactFlag:Function;
 }
 
 export default function Post(props:Props) {
@@ -52,5 +54,3 @@ export default function Post(props:Props) {
         </div>
     )
 }
-
-

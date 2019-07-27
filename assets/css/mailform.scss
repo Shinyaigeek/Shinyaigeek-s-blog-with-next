@@ -1,11 +1,29 @@
-.mailform--box {
-    input{
-        margin-top: 10px;
+
+    .modal{
+        width: 300px;
+        .name{
+            width: 100%;
+            margin: 5px auto 10px auto;
+            .form{
+                width: 75%;
+            }
+        }
+
+        .subject{
+            width: 100%;
+            margin: 5px auto 10px auto;
+            .form{
+                width: 75%;
+            }
+        }
+
+        .mailaddress{
+            width: 100%;
+            margin: 5px auto 10px auto;
+            .form{
+                width: 75%;
+                margin-left: 42px;
+                margin-top: 3px;
+            }
+        }
     }
-    textarea{
-        margin-top: 10px;
-    }
-    button{
-        margin-top: 10px;
-    }
-}
