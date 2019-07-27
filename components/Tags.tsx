@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Tag } from "antd";
 
 import "../assets/css/tags.scss";
+import { summarizers } from "istanbul-lib-report";
 
 type Tags = {
 	tagName: string;
@@ -19,13 +20,18 @@ type Prop = {
 };
 
 function Chip(props: Prop, key: number) {
-	console.log(props);
 	return (
 		<Tag
 			color={props.props.tagColor}
 			id={props.props.tagPath}
 			onClick={(e: any) => {
 				e.target.getAttribute("id");
+			}}
+			style={{
+				fontSize:24,
+				width:"minContent",
+				padding:"5px 8px",
+				margin:"3px 5px"
 			}}
 		>
 			{props.props.tagName}

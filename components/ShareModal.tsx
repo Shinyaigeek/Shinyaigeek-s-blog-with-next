@@ -8,7 +8,7 @@ interface TProps {
     flag:boolean,
     NightMode:boolean,
     handleFlag:Function,
-    id:string
+    id:string,
 }
 
 interface TState{
@@ -54,17 +54,14 @@ export default class ShareModal extends React.Component <TProps,TState> {
     }
 
     async handleHeight(y:number){
-        console.log(y)
         await this.setState({
             height:this.state.height,
             childrenHeight:this.state.childrenHeight,
             modalHeight:y
         })
-        console.log(this.state)
     }
 
     handleMove(e:any){
-        console.log(e.changedTouches)
         const y = e.changedTouches[0].clientY;
         return this.handleHeight(y);
     }
@@ -93,8 +90,6 @@ export default class ShareModal extends React.Component <TProps,TState> {
     }
 
     render() {
-        console.log(this.props)
-        console.log(this.state)
         return (
             <div>
                 <CSSTransition
