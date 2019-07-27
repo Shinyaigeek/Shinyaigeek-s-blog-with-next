@@ -1,5 +1,5 @@
 import { Input } from "antd";
-import { Modal, Button } from "antd";
+import { Modal } from "antd";
 
 import React from "react";
 
@@ -59,7 +59,7 @@ export default class MailForm extends React.Component<
 		this.setState(state);
 	}
 
-	mailSubmit() {
+	async mailSubmit() {
 		const template_params = {
 			reply_to: this.state.yourAddress,
 			subject: this.state.subject,
@@ -70,7 +70,8 @@ export default class MailForm extends React.Component<
 		var service_id = "default_service";
 		var template_id = "template_vmKwN61k";
 		var user_id = "user_lxYZJTHqNDAhtluEIHAmV";
-		emailjs.send(service_id, template_id, template_params, user_id);
+		await emailjs.send(service_id, template_id, template_params, user_id)
+		return this.props.handleContactFlag(false);
 	}
 
 	render() {
@@ -110,17 +111,17 @@ export default class MailForm extends React.Component<
 					/>
 				</div>
 				<div className="mailaddress">
-				<span className="text">メールアドレス：</span>
-				<Input
-					type="email"
-					value={this.state.yourAddress}
-					placeholder="Your Email Address"
-					name="yourAddress"
-					onChange={(event: any) =>
-						this.handleChange(event, "yourAddress")
-					}
-					className="form"
-				/>
+					<span className="text">メールアドレス：</span>
+					<Input
+						type="email"
+						value={this.state.yourAddress}
+						placeholder="Your Email Address"
+						name="yourAddress"
+						onChange={(event: any) =>
+							this.handleChange(event, "yourAddress")
+						}
+						className="form"
+					/>
 				</div>
 				<TextArea
 					value={this.state.content}
