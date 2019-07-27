@@ -7,7 +7,7 @@ import ShareModal from '../components/ShareModal'
 import ThatsMe from '../components/ThatsMe'
 import Splash from '../components/Splash'
 
-import {Avatar} from 'antd'
+import {Icon} from 'antd'
 
 import '../assets/css/post.scss'
 
@@ -45,9 +45,9 @@ export default function Post(props:Props) {
             <div className="share">
                 <ShareButton handleShareFlag={props.handleShareFlag} />
                 <ShareModal flag={props.shareFlag} handleFlag={props.handleShareFlag} NightMode={false} id="share--modal">
-                    <div className="share--Twitter"><Avatar src="/static/twitter.svg" className="share--Twitter__icon"></Avatar>Twitter</div>
-                    <div className="share--FaceBook"><Avatar src="/static/facebook.svg" className="share--Facebook__icon"></Avatar>FaceBook</div>
-                    <div className="share--LikedIn"><Avatar src="/static/linkedin.svg" className="share--Linkedin__icon"></Avatar>LikedIn</div>
+                    <div className="share--Twitter"><Icon type="twitter" />Twitter</div>
+                    <div className="share--FaceBook"><Icon type="facebook" />FaceBook</div>
+                    <div className="share--LikedIn"><Icon type="linkedin" />LikedIn</div>
                 </ShareModal>
             </div>
         </div>
