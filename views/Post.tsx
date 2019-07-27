@@ -45,9 +45,8 @@ export default function Post(props:Props) {
             <div className="share">
                 <ShareButton handleShareFlag={props.handleShareFlag} />
                 <ShareModal flag={props.shareFlag} handleFlag={props.handleShareFlag} NightMode={false} id="share--modal">
-                    <div className="share--Twitter"><Icon type="twitter" />Twitter</div>
-                    <div className="share--FaceBook"><Icon type="facebook" />FaceBook</div>
-                    <div className="share--LikedIn"><Icon type="linkedin" />LikedIn</div>
+                    <div className="share--Twitter"><a href={"https://twitter.com/intent/tweet?url=https://www.shinyaigeek.com/p/" + props.router.query.postIndex + "&text=しにゃいの学習帳&via=shinyaigeek"}><Icon type="twitter" />Twitter</a></div>
+                    <div className="share--FaceBook"><a href={"https://www.facebook.com/sharer/sharer.php?u=https://www.shinyaigeek.com/p/"+ props.router.query.postIndex}><Icon type="facebook" />FaceBook</a></div>
                 </ShareModal>
             </div>
         </div>

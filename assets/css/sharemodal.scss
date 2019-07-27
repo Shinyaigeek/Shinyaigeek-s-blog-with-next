@@ -53,17 +53,18 @@
       border-radius: 999px;
       margin: 0px auto;
     }
-  
-    *{
-      padding: 0px 0;
-      height: 33px;
-      font-size: 5vh;
-    }
 
     div{
       margin: 14px;
       text-align: center;
       font-size: 24px;
+      padding: 0px 0;
+      height: 33px;
+
+      a{
+        color: rgba(0, 0, 0, .65);
+        text-decoration: none;
+      }
     }
   
   
