@@ -33,6 +33,10 @@ export default function Item(itemData:ItemData) {
                         src={Data.img}
                         className="item--card__img"
                     />}
+                    style={{
+                        width:300,
+                        margin:"24px auto"
+                    }}
                     >
                     <Meta
                     title={Data.name}
