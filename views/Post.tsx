@@ -6,13 +6,16 @@ import Content from "../components/Content";
 import ShareModal from "../components/ShareModal";
 import ThatsMe from "../components/ThatsMe";
 import Splash from "../components/Splash";
+import MiniTags from "../components/miniTags"
 
 import { Avatar, Button, Icon } from "antd";
 
 import "../assets/css/post.scss";
 
 type PostInfo = {
-	name: string;
+    name: string;
+    date:string;
+    tag:string[]
 };
 
 type query = {
@@ -35,10 +38,13 @@ interface Props {
 
 export default function Post(props:Props) {
     const content = require('../items/' + props.router.query.postIndex + ".md")
+    console.log(props)
     return (
         <div className="content">
             <div className="content--main">
                 <h1>{props.router.query.postInfo.name}</h1>
+                <div className="date"><Icon type="edit" />{props.router.query.postInfo.date}</div>
+                <div className="post--tag"><MiniTags contents={props.router.query.postInfo.tag} /></div>
                 {content && <Content content={content} />}
                 {!content && <Splash />}
                 <MailForm router={props.router.pathname}/>
