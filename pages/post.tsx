@@ -7,6 +7,8 @@ import Post from "../views/Post";
 
 import Head from "next/head"
 
+import 'highlight.js/styles/github.css';
+
 const fixHtml:Function = (handleShareFlag:Function) => (flag:boolean) => {
 	if(flag){
 		document.querySelector('html').style.overflow = "hidden";

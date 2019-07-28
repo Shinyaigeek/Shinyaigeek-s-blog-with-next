@@ -37,6 +37,7 @@
     "find-up": "^4.0.0",
     "fs": "0.0.1-security",
     "fs2": "^0.3.4",
+    "highlight.js": "^9.15.8",
     "html-loader": "^0.5.5",
     "ignore-loader": "^0.1.2",
     "markdown-loader": "^5.0.0",
@@ -59,6 +60,7 @@
     "react-markdown": "^4.0.8",
     "react-paginate": "^6.3.0",
     "react-redux": "^7.0.3",
+    "react-syntax-highlighter": "^11.0.2",
     "react-transition-group": "^4.1.0",
     "react-typing-animation": "^1.6.2",
     "redux": "^4.0.1",
@@ -73,6 +75,8 @@
     "webpack-cli": "^3.3.2"
   },
   "devDependencies": {
+    "@types/next": "^8.0.6",
+    "@types/react-syntax-highlighter": "^10.2.1",
     "typescript": "^3.5.1",
     "webpack": "^4.32.2"
   }

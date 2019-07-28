@@ -1,4 +1,3 @@
-
 module.exports = {
     name:"Vue.jsでブログを作りたい１",
     path:"/11",
