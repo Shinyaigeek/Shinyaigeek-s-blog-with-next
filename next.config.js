@@ -48,6 +48,8 @@ const returnHome = function (itemList, itemN, tags) {
     let items = {}
     const page = "/"
     let query = {};
+    const itemN = dirN('./items').length
+    const itemList = getFileContent(itemN)
     query["itemN"] = itemN;
     query["itemList"] = itemList;
     query['tag'] = null;
@@ -88,14 +90,14 @@ const nextConfig = {
                 page: "privacypolicy",
                 query: null
             },
-            "profile":{
+            "profile": {
                 page: "profile",
                 query: null
             }
         }
         let all = {};
-        all = Object.assign(others,posts)
-        all = Object.assign(all,homes)
+        all = Object.assign(others, posts)
+        all = Object.assign(all, homes)
         return all
     },
     webpack: function (config, {
@@ -148,7 +150,7 @@ const nextConfig = {
                     options: {
                         gfm: true,
                         breaks: true,
-                        highlight: function(code) {
+                        highlight: function (code) {
                             console.log(code)
                             return highlight.highlightAuto(code).value;
                         }

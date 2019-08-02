@@ -13,6 +13,7 @@ interface Home {
 
 export default function Home<Home>(props: any) {
 	let showItems:object[] = []
+	console.log(props)
     // let itemList = []
     // itemList = props.itemDatas.router.query.itemList
     props.itemDatas.map(function(item:any,index:number = 2) {

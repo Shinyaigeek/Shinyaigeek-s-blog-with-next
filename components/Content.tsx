@@ -16,7 +16,7 @@ export default function Content(content: any) {
 
 	return (
 		<div className="blog__content">
-		<Link prefetch href="/home" >
+		<Link prefetch href="/tag/React" >
 		<a>aaaaa</a>
 		</Link>
 			<Heading content={content.content}/>
