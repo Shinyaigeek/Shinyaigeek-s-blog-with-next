@@ -1,5 +1,7 @@
 import React from "react";
 
+import Link from "next/link"
+
 import { Avatar,Icon } from "antd";
 
 import "../assets/css/thatsme.scss";
@@ -7,7 +9,7 @@ import "../assets/css/thatsme.scss";
 export default function ThatsMe() {
 	return (
 		<div className="thatsMe">
-			<img src="/static/icon.jpg" className="thatsMe--icon" />
+			<Link href="/profile"><a className="thatsMe--icon"><img src="/static/icon.jpg" className="thatsMe--icon" /></a></Link>
 			しにゃい/Shinyaigeek
 			<br />
 			エモいをハックしたい

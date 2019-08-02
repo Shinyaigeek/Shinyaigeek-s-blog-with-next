@@ -33,8 +33,8 @@ export default function Header(props: Props) {
 					</Link>
 				</div>
 				<div className="to">
-					<Link prefetch href="/">
-						<a href="/" className="toHome">
+					<Link prefetch href="/profile">
+						<a className="toHome">
 							プロフィール
 						</a>
 					</Link>
@@ -78,8 +78,8 @@ export default function Header(props: Props) {
 							</Link>
 						</div>
 						<div className="to">
-							<Link prefetch href="/">
-								<a href="/" className="toHome">
+							<Link prefetch href="/profile">
+								<a className="toHome">
 									プロフィール
 								</a>
 							</Link>
