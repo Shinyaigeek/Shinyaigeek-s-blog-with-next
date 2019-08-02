@@ -3,7 +3,7 @@ const withSass = require('@zeit/next-sass');
 const withCSS = require('@zeit/next-css')
 
 const withPlugins = require('next-compose-plugins')
-
+const highlight = require('highlight.js');
 
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -90,17 +90,8 @@ const nextConfig = {
             }
         }
         let all = {};
-        all = Object.assign(others, posts)
-        all = Object.assign(all, homes)
-        // return {
-        //     '/': {
-        //         page: '/',
-        //         query: HomeProps
-        //     },
-        //     '/about': {
-        //         page: '/about'
-        //     },
-        // }
+        all = Object.assign(others,posts)
+        all = Object.assign(all,homes)
         return all
     },
     webpack: function (config, {
@@ -153,7 +144,10 @@ const nextConfig = {
                     options: {
                         gfm: true,
                         breaks: true,
-                        renderer
+                        highlight: function(code) {
+                            console.log(code)
+                            return highlight.highlightAuto(code).value;
+                        }
                     }
                 }
             ]

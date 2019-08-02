@@ -8,7 +8,7 @@ interface Props {
 	contents: string[];
 }
 
-export default function miniTags(props: Props) {
+export default function miniTags(props: Props){
 	return (
 		<div className="item--tags">
 			{props.contents.map(function(

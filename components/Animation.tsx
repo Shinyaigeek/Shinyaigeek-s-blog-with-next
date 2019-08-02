@@ -62,7 +62,7 @@ class Animation extends React.Component {
 					/>
 					<Avatar
 						className="welcome--animation__img"
-						src="/static/icon.jpg"
+						src="/static/icon_transparent.png"
 						size={80}
 						style={{
 							overflow: "hidden",

@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Head from "next/head";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Tags from "../components/Tags";
+import MailForm from "../components/MailForm"
 
 import "../assets/css/layout.scss";
 
@@ -59,24 +60,31 @@ const tags = [
 	}
 ];
 
-const Layout = (ChildComponent: any) => (props: any) => (
-	<div className="layout">
-		<Head>
-			<title>しにゃいの学習帳</title>
-			<noscript>
-				<strong>
-					We're sorry but shinyaigeek doesn't work properly without
-					JavaScript enabled. Please enable it to continue.
-				</strong>
-			</noscript>
-		</Head>
-		<Header />
-		<div className="notHeader">
-			<ChildComponent {...props} />
-			<Tags tags={tags} handleTag={props.handleTag} />
-			<Footer />
-		</div>
-	</div>
-);
+const Layout = (ChildComponent: any) =>
+	function(props: any) {
+		const [menuFlag, handleMenuFlag] = useState(false);
+		const [contactFlag, handleContactFlag] = useState(false);
+		return (
+			<div className="layout">
+				<Head>
+					<title>しにゃいの学習帳</title>
+					<noscript>
+						<strong>
+							We're sorry but shinyaigeek doesn't work properly
+							without JavaScript enabled. Please enable it to
+							continue.
+						</strong>
+					</noscript>
+				</Head>
+				<Header menuFlag={menuFlag} handleMenuFlag={handleMenuFlag} contactFlag={contactFlag} handleContactFlag={handleContactFlag}/>
+				<div className="notHeader">
+					<ChildComponent {...props} contactFlag={contactFlag} handleContactFlag={handleContactFlag}/>
+					<Tags tags={tags} handleTag={props.handleTag} />
+					<Footer />
+				</div>
+				<MailForm router="layout" contactFlag={contactFlag} handleContactFlag={handleContactFlag}/>
+			</div>
+		);
+	};
 
 export default Layout;
