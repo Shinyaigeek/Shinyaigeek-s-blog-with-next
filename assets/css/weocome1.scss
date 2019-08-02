@@ -1,11 +1,11 @@
 @import "./_core/variable.scss";
 
 .welcome1{
-    height: 90vh;
+    height: calc(100vh - 72px);
     width: 100vw;
     background-color: $theme_background;
     position: absolute;
-    top: 10vh;
+    top: 72px;
     left: 0;
     right: 0;
     bottom: 0;
