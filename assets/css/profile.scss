@@ -1,0 +1,48 @@
+@import "./_core/variable.scss";
+
+.profile{
+    width: 80vw;
+    margin: 0 auto;
+
+    img{
+        width: 200px;
+        object-fit: contain;
+        display: block;
+        margin: 18px auto;
+    }
+
+    .name{
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .social {
+        width: 200px;
+        margin: 12px auto;
+        .twitter{
+            font-size: 22px;
+            a{
+                text-decoration: none;
+                color: $theme_background;
+            }
+        }
+
+        .github{
+            font-size: 22px;
+            margin-top: 8px;
+            a{
+                text-decoration: none;
+                color: $theme_background;
+            }
+        }
+
+        .linkedin{
+            font-size: 22px;
+            margin-top: 8px;
+            a{
+                text-decoration: none;
+                color: $theme_background;
+            }
+        }
+    }
+}
