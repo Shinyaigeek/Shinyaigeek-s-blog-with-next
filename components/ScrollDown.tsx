@@ -27,7 +27,7 @@ const animation = [
 		repeat: -1,
 		yoyo: true,
 		ease: ease1,
-		duration: 1000
+		duration: 999
 	}
 ];
 
