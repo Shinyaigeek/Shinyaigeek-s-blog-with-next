@@ -24,7 +24,7 @@ const {Meta} = Card;
 export default function Item(itemData:ItemData) {
     const Data = itemData.itemData
     return (
-        <Link prefetch href={"p" + Data.path} >
+        <Link prefetch href={"/p" + Data.path} >
             <a className="item--card__anchor">
                 <Card className="item--card"
                     bordered={true}

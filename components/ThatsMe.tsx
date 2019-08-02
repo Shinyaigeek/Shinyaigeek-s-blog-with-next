@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Avatar } from "antd";
+import { Avatar,Icon } from "antd";
 
 import "../assets/css/thatsme.scss";
 
