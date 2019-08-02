@@ -1,36 +1,32 @@
 import React from "react";
 
 import Link from "next/link";
+import { useRouter } from "next/router";
 
-import { Button, Drawer } from "antd";
+import { Drawer } from "antd";
 
 import "../assets/css/header.scss";
 
 interface Props {
-	contactFlag:boolean;
-	handleContactFlag:Function;
-	menuFlag:boolean;
-	handleMenuFlag:Function
+	contactFlag: boolean;
+	handleContactFlag: Function;
+	menuFlag: boolean;
+	handleMenuFlag: Function;
 }
 
 export default function Header(props: Props) {
+	const router = useRouter();
 	return (
 		<div className="header">
 			<div className="title">
-				<Link prefetch href="/">
-					<a href="/" className="toHome">
-						<img src="/static/icon_transparent.png" />
-						しにゃいの学習帳
-					</a>
-				</Link>
+				<a href="/" className="toHome">
+					<img src="/static/icon_transparent.png" />
+					しにゃいの学習帳
+				</a>
 			</div>
 			<div className="contents">
 				<div className="to">
-					<Link prefetch href="/">
-						<a href="/" className="toHome">
-							ブログ
-						</a>
-					</Link>
+					<a className="toHome">ブログ</a>
 				</div>
 				<div className="to">
 					<Link prefetch href="/">
@@ -40,13 +36,18 @@ export default function Header(props: Props) {
 					</Link>
 				</div>
 				<div className="to">
-					<Link prefetch href="/">
-						<a href="/" className="toHome">
-							作品集
-						</a>
-					</Link>
+					<a href="/" className="toHome">
+						作品集
+					</a>
 				</div>
-				<div className="to" onClick={() => {props.handleContactFlag(true)}}>コンタクト</div>
+				<div
+					className="to"
+					onClick={() => {
+						props.handleContactFlag(true);
+					}}
+				>
+					コンタクト
+				</div>
 			</div>
 			<div className="contents_hamberger">
 				<div
@@ -71,27 +72,28 @@ export default function Header(props: Props) {
 				>
 					<div className="menu--list">
 						<div className="to">
-							<Link prefetch href="/">
-								<a href="/" className="toHome">
-									ブログ
-								</a>
-							</Link>
+							<a href="/" className="toHome">
+								ブログ
+							</a>
 						</div>
 						<div className="to">
-							<Link prefetch href="/">
-								<a href="/" className="toHome">
-									プロフィール
-								</a>
-							</Link>
+							<a href="/" className="toHome">
+								プロフィール
+							</a>
 						</div>
 						<div className="to">
-							<Link prefetch href="/">
-								<a href="/" className="toHome">
-									作品集
-								</a>
-							</Link>
+							<a href="/" className="toHome">
+								作品集
+							</a>
 						</div>
-						<div className="to" onClick={() => {props.handleContactFlag(true)}}>コンタクト</div>
+						<div
+							className="to"
+							onClick={() => {
+								props.handleContactFlag(true);
+							}}
+						>
+							コンタクト
+						</div>
 					</div>
 				</Drawer>
 			</div>

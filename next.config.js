@@ -87,6 +87,10 @@ const nextConfig = {
             "privacypolicy": {
                 page: "privacypolicy",
                 query: null
+            },
+            "profile":{
+                page: "profile",
+                query: null
             }
         }
         let all = {};

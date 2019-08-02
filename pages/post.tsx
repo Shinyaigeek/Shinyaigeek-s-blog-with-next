@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { withRouter } from "next/router";
 import Layout from "../layout/Layout";
 
-import PageWrapper from '../views/IndexWrapper'
+import PageWrapper from '../views/HomeWrapper'
 import Post from "../views/Post";
 
 import Head from "next/head"
@@ -30,4 +30,4 @@ function PostPage(props: any) {
 	);
 }
 
-export default withRouter(Layout(PageWrapper(PostPage)));
+export default withRouter(Layout(PostPage));
