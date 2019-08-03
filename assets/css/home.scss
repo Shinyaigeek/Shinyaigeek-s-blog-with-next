@@ -6,6 +6,22 @@
     margin-top: 100vh;
     width: 300px;
 
+    .sorters{
+        margin: 0 18px;
+        padding-top: 18px;
+        display: flex;
+        .order{
+            margin: 0 auto;
+        }
+        a{
+            display: block;
+            margin: 0 auto;
+            .tag{
+                margin: 0 auto;
+            }
+        }
+    }
+
     .blog--contents{
         width: 300px;
         margin: 0 auto;
