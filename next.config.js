@@ -87,11 +87,15 @@ const nextConfig = {
             "privacypolicy": {
                 page: "privacypolicy",
                 query: null
+            },
+            "profile": {
+                page: "profile",
+                query: null
             }
         }
         let all = {};
-        all = Object.assign(others,posts)
-        all = Object.assign(all,homes)
+        all = Object.assign(others, posts)
+        all = Object.assign(all, homes)
         return all
     },
     webpack: function (config, {
@@ -144,7 +148,7 @@ const nextConfig = {
                     options: {
                         gfm: true,
                         breaks: true,
-                        highlight: function(code) {
+                        highlight: function (code) {
                             console.log(code)
                             return highlight.highlightAuto(code).value;
                         }
