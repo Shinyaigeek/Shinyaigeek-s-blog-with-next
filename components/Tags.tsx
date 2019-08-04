@@ -5,7 +5,6 @@ import Link from "next/link";
 import { Tag } from "antd";
 
 import "../assets/css/tags.scss";
-import { summarizers } from "istanbul-lib-report";
 
 type Tags = {
 	tagName: string;
@@ -40,7 +39,6 @@ function Chip(props: Prop, key: number) {
 }
 
 export default function Tags(tags: Prop) {
-	console.log(tags);
 	return (
 		<div className="tags">
 			{tags.tags.map((tag: any, index: number) => (

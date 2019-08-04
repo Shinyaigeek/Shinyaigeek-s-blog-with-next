@@ -2,6 +2,8 @@ import React, { useState } from "react";
 
 import Head from "next/head";
 
+import { withRouter } from "next/router";
+
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Tags from "../components/Tags";
