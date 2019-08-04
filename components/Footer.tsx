@@ -6,7 +6,7 @@ export default class Footer extends Component {
     render() {
         return (
             <div className="footer">
-                <img src="/static/copyright.svg" className="copyright--icon"/>2019 Shinyaigeek
+                Copyright. 2019 Shinyaigeek
             </div>
         )
     }
