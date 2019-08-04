@@ -7,6 +7,8 @@ import Post from "../views/Post";
 
 import Head from "next/head"
 
+import ReactGA from "react-ga"
+
 import 'highlight.js/styles/github.css';
 
 const fixHtml:Function = (handleShareFlag:Function) => (flag:boolean) => {
@@ -20,6 +22,8 @@ const fixHtml:Function = (handleShareFlag:Function) => (flag:boolean) => {
 
 function PostPage(props: any) {
 	const [shareFlag, handleShareFlag] = useState(false);
+	ReactGA.initialize('UA-125797546-2');
+	ReactGA.pageview(window.location.pathname + window.location.search);
 	return (
 		<div>
 			<Head>
