@@ -65,7 +65,7 @@ function PostPage(props: any) {
 				handleContactFlag={props.handleContactFlag}
 				shareFlag={shareFlag}
 				handleShareFlag={fixHtml(handleShareFlag)}
-				{...props}
+				router={props.router}
 			/>
 		</div>
 	);
