@@ -11,18 +11,17 @@ type Tags = {
 	tagPath: string;
 	tagNameEn: string;
 	tagColor: string;
-	handleTag: Function;
 };
 type Prop = {
-	props: Tags;
+	props: Tags[];
 	handleTag: Function;
 };
 
-function Chip(props: Prop, key: number) {
+function Chip(props: Tags, key: number) {
 	return (
 		<Tag
-			color={props.props.tagColor}
-			id={props.props.tagPath}
+			color={props.tagColor}
+			id={props.tagPath}
 			onClick={(e: any) => {
 				e.target.getAttribute("id");
 			}}
@@ -32,8 +31,9 @@ function Chip(props: Prop, key: number) {
 				padding:"5px 8px",
 				margin:"3px 5px"
 			}}
+			key={key}
 		>
-			{props.props.tagName}
+			{props.tagName}
 		</Tag>
 	);
 }
@@ -41,10 +41,10 @@ function Chip(props: Prop, key: number) {
 export default function Tags(tags: Prop) {
 	return (
 		<div className="tags">
-			{tags.tags.map((tag: any, index: number) => (
+			{tags.props.map((tag: Tags, index: number) => (
 				<Link href={"/tag/" + tag.tagPath}>
 					<a className="tag--anchor">
-						<Chip props={tag} key={index} />
+						<Chip {...tag} key={index} />
 					</a>
 				</Link>
 			))}

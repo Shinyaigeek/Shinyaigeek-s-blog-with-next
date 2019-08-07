@@ -1,7 +1,6 @@
 import React from "react";
 
 import Link from "next/link";
-import { useRouter } from "next/router";
 
 import { Drawer } from "antd";
 
@@ -15,7 +14,6 @@ interface Props {
 }
 
 export default function Header(props: Props) {
-	const router = useRouter();
 	return (
 		<div className="header">
 			<div className="title">

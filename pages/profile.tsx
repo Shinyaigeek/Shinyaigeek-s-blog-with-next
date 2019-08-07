@@ -12,7 +12,7 @@ type Props = {
     handleContactFlag:Function
 }
 
-function profile(props:Props) {
+function profile(props:Props){
     return (
         <div className="profile">
             <Profile handleContactFlag={props.handleContactFlag}/>

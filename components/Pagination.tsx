@@ -11,7 +11,6 @@ interface Props {
 }
 
 export default function Pagination(props: Props) {
-    console.log(props)
 	return (
 		<div className="pagination">
 			<AntPagination

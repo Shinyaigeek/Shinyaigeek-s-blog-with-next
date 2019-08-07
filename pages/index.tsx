@@ -2,16 +2,13 @@ import React, { useState } from "react";
 import { withRouter } from "next/router";
 import Head from "next/head";
 import Layout from "../layout/Layout";
-import { NextPage } from "next";
 import Home from "../views/Home";
-import HomeWrapper from "../views/HomeWrapper";
 
-function HomePage(props: any): NextPage<{}> {
+function HomePage(props: any) {
 	const [page, handlePage] = useState(0);
 	const [reverse, handleReverse] = useState(false);
 	const itemList = props.router.query.itemList;
 	const [items, handleItems] = useState(itemList);
-	console.log(props);
 	return (
 		<div>
 			<Head>
@@ -21,7 +18,6 @@ function HomePage(props: any): NextPage<{}> {
 					content="しにゃいのブログ。主に技術のことについて語ります。Node.jsが好き"
 				/>
 				<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-				<meta charset="utf-8" />
 				<meta name="author" content="しにゃい" />
 				<meta property="og:url" content="https//www.shinyaigeek.com" />
 				<meta property="og:title" content="しにゃいの学習帳" />

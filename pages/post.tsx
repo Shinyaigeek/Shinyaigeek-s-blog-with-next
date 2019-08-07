@@ -2,37 +2,55 @@ import React, { useState } from "react";
 import { withRouter } from "next/router";
 import Layout from "../layout/Layout";
 
-import PageWrapper from '../views/HomeWrapper'
 import Post from "../views/Post";
 
-import Head from "next/head"
+import Head from "next/head";
 
-import 'highlight.js/styles/github.css';
+import "highlight.js/styles/github.css";
 
-const fixHtml:Function = (handleShareFlag:Function) => (flag:boolean) => {
-	if(flag){
-		document.querySelector('html').style.overflow = "hidden";
-	}else{
-		document.querySelector('html').style.overflow = "visible";
+function ensure<T>(
+	argument: T | undefined | null,
+	message: string = "This value was promised to always be there"
+) {
+	if (argument === undefined || argument === null) {
+		throw new TypeError(message);
 	}
-	return handleShareFlag(flag)
+	return argument;
 }
+
+const fixHtml: Function = (handleShareFlag: Function) => (flag: boolean) => {
+	const doc:HTMLElement = ensure(document.querySelector("html"));
+	if (doc) {
+		if (flag) {
+			doc.style.overflow = "hidden";
+		} else {
+			doc.style.overflow = "visible";
+		}
+		return handleShareFlag(flag);
+	}
+};
 
 function PostPage(props: any) {
 	const [shareFlag, handleShareFlag] = useState(false);
 	return (
 		<div>
 			<Head>
-				<title>しにゃいの学習帳｜{props.router.query.postInfo.name}</title>
+				<title>
+					しにゃいの学習帳｜{props.router.query.postInfo.name}
+				</title>
 				<meta
 					name="description"
 					content={props.router.query.postInfo.description}
 				/>
 				<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-				<meta charset="utf-8" />
 				<meta name="author" content="しにゃい" />
 				<meta property="og:url" content="https//www.shinyaigeek.com" />
-				<meta property="og:title" content={"しにゃいの学習帳｜" + props.router.query.postInfo.name} />
+				<meta
+					property="og:title"
+					content={
+						"しにゃいの学習帳｜" + props.router.query.postInfo.name
+					}
+				/>
 				<meta
 					property="og:description"
 					content={props.router.query.postInfo.description}
@@ -42,7 +60,13 @@ function PostPage(props: any) {
 				<meta name="twitter:card" content="summery" />
 				<link rel="icon" href="/static/monkey.ico" />
 			</Head>
-			<Post contactFlag={props.contactFlag} handleContactFlag={props.handleContactFlag} shareFlag={shareFlag} handleShareFlag={fixHtml(handleShareFlag)} {...props} />
+			<Post
+				contactFlag={props.contactFlag}
+				handleContactFlag={props.handleContactFlag}
+				shareFlag={shareFlag}
+				handleShareFlag={fixHtml(handleShareFlag)}
+				{...props}
+			/>
 		</div>
 	);
 }

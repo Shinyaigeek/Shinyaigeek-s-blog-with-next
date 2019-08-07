@@ -13,11 +13,8 @@ interface Home {
 	reverseItemsAndSwitch: Function;
 }
 
-export default function Home<Home>(props: any) {
+export default function Home(props: any) {
 	let showItems: object[] = [];
-	console.log(props);
-	// let itemList = []
-	// itemList = props.itemDatas.router.query.itemList
 	props.itemDatas.map(function(item: any, index: number = 2) {
 		if (props.page * 10 <= index && index <= props.page * 10 + 9) {
 			showItems.push(item);

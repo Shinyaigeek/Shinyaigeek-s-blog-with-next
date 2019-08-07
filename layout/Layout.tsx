@@ -2,8 +2,6 @@ import React, { useState } from "react";
 
 import Head from "next/head";
 
-import { withRouter } from "next/router";
-
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Tags from "../components/Tags";
@@ -62,7 +60,7 @@ const tags = [
 	}
 ];
 
-const Layout = (ChildComponent: any) =>
+const Layout = (ChildComponent: React.ComponentType) =>
 	function(props: any) {
 		const [menuFlag, handleMenuFlag] = useState(false);
 		const [contactFlag, handleContactFlag] = useState(false);
@@ -81,7 +79,7 @@ const Layout = (ChildComponent: any) =>
 				<Header menuFlag={menuFlag} handleMenuFlag={handleMenuFlag} contactFlag={contactFlag} handleContactFlag={handleContactFlag}/>
 				<div className="notHeader">
 					<ChildComponent {...props} contactFlag={contactFlag} handleContactFlag={handleContactFlag}/>
-					<Tags tags={tags} handleTag={props.handleTag} />
+					<Tags props={tags} handleTag={props.handleTag} />
 					<Footer />
 				</div>
 				<MailForm router="layout" contactFlag={contactFlag} handleContactFlag={handleContactFlag}/>
