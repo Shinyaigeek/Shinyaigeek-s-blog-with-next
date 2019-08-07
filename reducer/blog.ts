@@ -8,7 +8,6 @@ const initialBlogState = {
 };
 
 const blog = (state = initialBlogState, action: any) => {
-	console.log(action)
 	switch (action.type) {
 		case actionTypes.SHARE_SWITCH:
 			return {
