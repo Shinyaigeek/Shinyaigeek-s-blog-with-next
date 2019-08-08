@@ -27,12 +27,10 @@ const tags = ["Algo", "Python", "Programing", "C", "JavaScript", "Blog", "Poem",
 
 const returnPosts = function (itemList, itemN) {
     let posts = {};
-    for (i = 1; i <= 20; i++) {
+    for (i = 1; i <= itemN; i++) {
         let query = {};
         query["postIndex"] = i;
         query['postInfo'] = itemList[i - 1]
-        // const content = getContent(i)
-        // query["content"] = content;
         let path = "/p/" + i;
         posts[path] = {
             page: "/post",
@@ -70,7 +68,7 @@ const returnHome = function (itemList, itemN, tags) {
 }
 
 const nextConfig = {
-    exportPathMap: async function (
+    exportPathMap: function (
         defaultPathMap, {
             dev,
             dir,
@@ -83,12 +81,10 @@ const nextConfig = {
         const homes = returnHome(itemList, itemN, tags)
         const others = {
             "privacypolicy": {
-                page: "privacypolicy",
-                query: null
+                page: "privacypolicy"
             },
             "profile": {
-                page: "profile",
-                query: null
+                page: "profile"
             }
         }
         let all = {};

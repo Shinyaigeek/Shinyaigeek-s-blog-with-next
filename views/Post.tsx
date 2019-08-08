@@ -4,10 +4,9 @@ import ShareButton from "../components/ShareButton";
 import Content from "../components/Content";
 import ShareModal from "../components/ShareModal";
 import ThatsMe from "../components/ThatsMe";
-import Splash from "../components/Splash";
 import MiniTags from "../components/miniTags";
 
-import { Icon } from "antd";
+import { Icon, Divider } from "antd";
 
 import "../assets/css/post.scss";
 
@@ -36,7 +35,7 @@ interface Props {
 }
 
 export default function Post(props: Props) {
-	const content = require('../items/' + props.router.query.postIndex + ".md")
+	const content = require("../items/" + props.router.query.postIndex + ".md");
 	return (
 		<div className="content">
 			<div className="content--main">
@@ -48,7 +47,9 @@ export default function Post(props: Props) {
 				<div className="post--tag">
 					<MiniTags contents={props.router.query.postInfo.tag} />
 				</div>
+				<Divider />
 				<Content content={content} />
+                <Divider />
 				<ThatsMe />
 			</div>
 			<div className="share">

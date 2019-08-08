@@ -6,7 +6,7 @@ import Home from "../views/Home";
 
 function HomePage(props: any) {
 	const [page, handlePage] = useState(0);
-	const [reverse, handleReverse] = useState(false);
+	const [reverse, handleReverse] = useState(true);
 	const itemList = props.router.query.itemList;
 	const [items, handleItems] = useState(itemList);
 	return (

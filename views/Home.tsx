@@ -15,15 +15,16 @@ interface Home {
 
 export default function Home(props: any) {
 	let showItems: object[] = [];
-	props.itemDatas.map(function(item: any, index: number = 2) {
+	const propItems = props.itemDatas;
+	propItems.map(function(item: any, index: number = 2) {
 		if (props.page * 10 <= index && index <= props.page * 10 + 9) {
 			showItems.push(item);
 		}
 	});
 
-	function reverseItemsAndSwitch(flag: boolean) {
+	async function reverseItemsAndSwitch(flag: boolean) {
 		const reverseList = props.itemDatas.reverse();
-		props.handleItems(reverseList);
+		await props.handleItems(reverseList);
 		return props.handleReverse(flag);
 	}
 	return (
