@@ -24,8 +24,8 @@ const {Meta} = Card;
 export default function Item(itemData:ItemData) {
     const Data = itemData.itemData
     return (
-        <Link prefetch href={"/p" + Data.path} >
-            <a className="item--card__anchor">
+        // <Link prefetch href={"/p" + Data.path} >
+            <a className="item--card__anchor" href={"/p" + Data.path}>
                 <Card className="item--card"
                     bordered={true}
                     hoverable={true}
@@ -45,6 +45,6 @@ export default function Item(itemData:ItemData) {
                     <MiniTags contents={Data.tag} />
                 </Card>
             </a>
-        </Link>
+        // </Link>
     )
 }
