@@ -57,8 +57,8 @@ function PostPage(props: any) {
 				/>
 				<meta property="og:image" content="/static/icon.jpg" />
 				<meta name="twitter:site" content="@Shinyaigeek" />
-				<meta name="twitter:card" content="summery" />
-				<link rel="icon" href="/static/monkey.ico" />
+				<meta name="twitter:card" content="summary" />
+				<link rel="icon" href="/static/icon.jpg" />
 			</Head>
 			<Post
 				contactFlag={props.contactFlag}

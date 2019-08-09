@@ -24,11 +24,11 @@ export default function Header(props: Props) {
 			</div>
 			<div className="contents">
 				<div className="to">
-					<a className="toHome">ブログ</a>
+					<a className="toHome" href="/">ブログ</a>
 				</div>
 				<div className="to">
 					<Link prefetch href="/profile">
-						<a className="toHome">
+						<a className="toHome" href="/profile/">
 							プロフィール
 						</a>
 					</Link>
@@ -75,7 +75,7 @@ export default function Header(props: Props) {
 							</a>
 						</div>
 						<div className="to">
-							<a href="/" className="toHome">
+							<a href="/profile" className="toHome">
 								プロフィール
 							</a>
 						</div>

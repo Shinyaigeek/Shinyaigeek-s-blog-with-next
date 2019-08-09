@@ -10,7 +10,7 @@ const { Paragraph } = Typography;
 
 export default function Profile(props: Props) {
 	return (
-		<React.Fragment>
+		<div>
 			<img src="/static/icon.jpg" />
 			<div className="name">しにゃい/Shinyaigeek</div>
 			<div className="social">
@@ -94,6 +94,6 @@ export default function Profile(props: Props) {
                     ただそのお仕事の内容や時期によって僕の力がフルに発揮できない、つまり僕の技術力やタスクによっては誠に恐縮ながらお断りさせて事もいただく事もあります。<br />
                 </Paragraph>
 			</div>
-		</React.Fragment>
+		</div>
 	);
 }
