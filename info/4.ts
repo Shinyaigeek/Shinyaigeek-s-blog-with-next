@@ -4,6 +4,6 @@ module.exports = {
     path:"/4",
     tag:["Blog"],
     description:`サーバーをレンタルしたのでその報告`,
-    img:"../static/icon.jpg",
+    img:"/static/icon.jpg",
     date:"2018/10/26"
 }

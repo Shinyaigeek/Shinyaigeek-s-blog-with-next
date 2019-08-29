@@ -4,6 +4,6 @@ module.exports = {
     path:"/14",
     tag:["Blog","Poem"],
     description:`東大の入学式から一年が経ちました`,
-    img:"../static/icon.jpg",
+    img:"/static/icon.jpg",
     date:"2019/4/07"
 }

@@ -4,6 +4,6 @@ module.exports = {
     path:"/16",
     tag:["Programing","Algo"],
     description:`たまには競プロやりゅ！！`,
-    img:"../static/icon.jpg",
+    img:"/static/icon.jpg",
     date:"2019/04/15"
 }

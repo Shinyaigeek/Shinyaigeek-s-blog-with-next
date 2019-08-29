@@ -4,6 +4,6 @@ module.exports = {
     path:"/18",
     tag:["Blog"],
     description:`名探偵ピカチュウはいいぞ`,
-    img:"../static/icon.jpg",
+    img:"/static/icon.jpg",
     date:"2019/5/16"
 }

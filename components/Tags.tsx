@@ -26,10 +26,10 @@ function Chip(props: Tags, key: number) {
 				e.target.getAttribute("id");
 			}}
 			style={{
-				fontSize:24,
-				width:"minContent",
-				padding:"5px 8px",
-				margin:"3px 5px"
+				fontSize: 24,
+				width: "minContent",
+				padding: "5px 8px",
+				margin: "3px 5px"
 			}}
 			key={key}
 		>
@@ -42,11 +42,9 @@ export default function Tags(tags: Prop) {
 	return (
 		<div className="tags">
 			{tags.props.map((tag: Tags, index: number) => (
-				<Link href={"/tag/" + tag.tagPath}>
-					<a className="tag--anchor">
-						<Chip {...tag} key={index} />
-					</a>
-				</Link>
+				<a className="tag--anchor" href={"/tag/" + tag.tagPath}>
+					<Chip {...tag} key={index} />
+				</a>
 			))}
 		</div>
 	);

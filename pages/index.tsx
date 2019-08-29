@@ -25,9 +25,12 @@ function HomePage(props: any) {
 					property="og:description"
 					content="しにゃいのブログ。主に技術のことについて語ります。Node.jsが好き"
 				/>
-				<meta property="og:image" content="/static/icon.jpg" />
+				<meta
+					property="og:image"
+					content="http://www.shinyaigeek.com/icon.jpg"
+				/>
 				<meta name="twitter:site" content="@Shinyaigeek" />
-				<meta name="twitter:card" content="summery" />
+				<meta name="twitter:card" content="summary" />
 				<link rel="icon" href="/static/icon.jpg" />
 			</Head>
 			<Home

@@ -27,10 +27,10 @@ const tags = ["Algo", "Python", "Programing", "C", "JavaScript", "Blog", "Poem",
 
 const returnPosts = function (itemList, itemN) {
     let posts = {};
-    for (i = 1; i <= itemN; i++) {
+    for (i = itemN; i >= 1; i--) {
         let query = {};
         query["postIndex"] = i;
-        query['postInfo'] = itemList[i - 1]
+        query['postInfo'] = itemList[itemN - i]
         let path = "/p/" + i;
         posts[path] = {
             page: "/post",
@@ -80,11 +80,11 @@ const nextConfig = {
         const posts = returnPosts(itemList, itemN)
         const homes = returnHome(itemList, itemN, tags)
         const others = {
-            "privacypolicy": {
-                page: "privacypolicy"
+            "/privacypolicy": {
+                page: "/privacypolicy"
             },
-            "profile": {
-                page: "profile"
+            "/profile": {
+                page: "/profile"
             }
         }
         let all = {};

@@ -4,6 +4,6 @@ module.exports = {
     path:"/20",
     tag:["Programing","JavaScript","React"],
     description:`Ant Designを激推しするだけのブログ`,
-    img:"../static/20-1.svg",
+    img:"/static/20-1.svg",
     date:"2019/5/22"
 }

@@ -3,6 +3,6 @@ module.exports = {
 	path: "/2",
 	tag: ["Programing", "Blog"],
 	description: `進捗報告`,
-	img: "../static/icon.jpg",
+	img: "/static/icon.jpg",
 	date: "2018/10/21"
 };

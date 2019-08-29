@@ -4,6 +4,6 @@ module.exports = {
     path:"/17",
     tag:["Blog","Programing","Poem"],
     description:`最近考えていることについて平成も終わるってのにポエムします`,
-    img:"../static/icon.jpg",
+    img:"/static/icon.jpg",
     date:"2019/4/30"
 }

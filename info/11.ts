@@ -3,6 +3,6 @@ module.exports = {
     path:"/11",
     tag:['JavaScript','Programing'],
     description:`Vue.jsでブログを作る`,
-    img:"../static/icon.jpg",
+    img:"/static/icon.jpg",
     date:"2019/3/16"
 }
