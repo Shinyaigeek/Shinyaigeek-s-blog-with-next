@@ -27,11 +27,11 @@ function HomePage(props: any) {
 				/>
 				<meta
 					property="og:image"
-					content="http://www.shinyaigeek.com/icon.jpg"
+					content="http://www.shinyaigeek.com/icon.png"
 				/>
 				<meta name="twitter:site" content="@Shinyaigeek" />
 				<meta name="twitter:card" content="summary" />
-				<link rel="icon" href="/static/icon.jpg" />
+				<link rel="icon" href="/static/icon.png" />
 			</Head>
 			<Home
 				itemDatas={items}

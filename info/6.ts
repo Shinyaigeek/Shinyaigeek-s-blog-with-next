@@ -4,6 +4,6 @@ module.exports = {
     path:"/6",
     tag:["Poem"],
     description:`働いたり、大学で一年間過ごす中で思った、極めるとはどういうことかについての拙いポエムですね`,
-    img:"/static/icon.jpg",
+    img:"/static/icon.png",
     date:"2018/11/17"
 }

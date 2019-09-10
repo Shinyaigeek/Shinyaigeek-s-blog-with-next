@@ -11,7 +11,7 @@ export default function ThatsMe() {
 		<div className="thatsMe">
 			<Link href="/profile">
 				<a className="thatsMe--icon">
-					<img src="/static/icon.jpg" className="thatsMe--icon" />
+					<img src="/static/icon.png" className="thatsMe--icon" />
 				</a>
 			</Link>
 			しにゃい/Shinyaigeek

@@ -11,7 +11,7 @@ const { Paragraph } = Typography;
 export default function Profile(props: Props) {
 	return (
 		<div>
-			<img src="/static/icon.jpg" />
+			<img src="/static/icon.png" />
 			<div className="name">しにゃい/Shinyaigeek</div>
 			<div className="social">
 				<div className="twitter">
