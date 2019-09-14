@@ -1,6 +1,5 @@
 import React from "react";
 
-import HeyWorld from "./HeyWorld";
 import Animation from "./Animation";
 import ScrollDown from "./ScrollDown"
 

@@ -60,16 +60,6 @@ class Animation extends React.Component {
 						className="welcome--earth"
 						src="/static/earth.png"
 					/>
-					<Avatar
-						className="welcome--animation__img"
-						src="/static/icon_transparent.png"
-						size={80}
-						style={{
-							overflow: "hidden",
-							transform: "translate3d(0,0,-2px) perspective(5000px)",
-							transformStyle: "preserve-3d"
-						}}
-					/>
 				</TweenOne>
 			</div>
 		);

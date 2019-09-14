@@ -3,8 +3,8 @@ $animationMaxLength:700;
 
 .welcome--animation{
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: 25px;
+    right: 25px;
     transform-style: preserve-3d;
     transform:perspective(5000px);
     overflow: hidden;

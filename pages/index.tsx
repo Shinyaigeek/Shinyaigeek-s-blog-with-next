@@ -19,7 +19,7 @@ function HomePage(props: any) {
 				/>
 				<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 				<meta name="author" content="しにゃい" />
-				<meta property="og:url" content="https//www.shinyaigeek.com" />
+				<meta property="og:url" content="https://www.shinyaigeek.com" />
 				<meta property="og:title" content="しにゃいの学習帳" />
 				<meta
 					property="og:description"
@@ -27,7 +27,7 @@ function HomePage(props: any) {
 				/>
 				<meta
 					property="og:image"
-					content="http://www.shinyaigeek.com/icon.png"
+					content="https://www.shinyaigeek.com/icon.png"
 				/>
 				<meta name="twitter:site" content="@Shinyaigeek" />
 				<meta name="twitter:card" content="summary" />
