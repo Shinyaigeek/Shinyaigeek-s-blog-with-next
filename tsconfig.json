@@ -21,6 +21,6 @@
   },
   "exclude": [
     "node_modules",
-    "dev_server.js",
+    "dev_server.js"
   ]
 }
