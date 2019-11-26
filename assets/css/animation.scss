@@ -1,38 +1,54 @@
-$animationMinLength:250;
-$animationMaxLength:700;
+$animationMinLength: 250;
+$animationMaxLength: 700;
 
-.welcome--animation{
-    position: absolute;
-    bottom: 25px;
-    right: 25px;
-    transform-style: preserve-3d;
-    transform:perspective(5000px);
-    overflow: hidden;
-    min-width:250px;
-    min-height: 250px;
-    max-height:700px;
-    max-width: 700px;
-    width:70vw;
-    height: 70vw;
-
-    .welcome--earth{
-        position:absolute;
-        overflow:hidden;
-        top: 0;
-        left: 0;
-        transform:translate3d(0,0,0) perspective(5000px);
-        transform-style:preserve-3d;
-        min-width: 225px;
-        min-height: 225px;
-        max-height: 675px;
-        max-width: 675px;
-        width: 55vw;
-        height: 55vw;
-    }
+.welcome--animation {
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  transform-style: preserve-3d;
+  transform: perspective(5000px);
+  overflow: visible;
+  width:270px;
+  height:270px;
 }
 
-@keyframes earth--rotate{
-    0% {
-        
-    }
+.earth {
+  animation: 5s infinite forwards normal earthX ease-in-out 1.25s;
+}
+
+.earthY {
+  animation: 5s infinite forwards normal earthY ease-in-out;
+}
+
+@keyframes earthY {
+  0%,100% {
+    transform: translatY(0px);
+  }
+//   25% {
+//     transform: translateY(-60px);
+//   }
+
+  50% {
+    transform: translateY(-120px);
+  }
+
+//   75% {
+//     transform: translateY(-60px);
+//   }
+}
+
+@keyframes earthX {
+  0%,100% {
+    transform: translateX(-180px);
+    z-index: 5;
+  }
+
+  25%{
+      z-index: 2;
+  }
+
+  50% {
+    transform: translateX(180px);
+    z-index: 2;
+  }
 }
