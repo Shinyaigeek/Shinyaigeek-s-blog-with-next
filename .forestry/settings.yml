@@ -5,16 +5,11 @@ admin_path:
 webhook_url: 
 sections:
 - type: directory
-  path: ''
+  path: post
   label: post
   create: documents
   match: "**/*"
   new_doc_ext: ".md"
-- type: directory
-  path: ''
-  label: l
-  create: all
-  match: "**/*"
 - type: document
   path: '23'
   label: ggg
