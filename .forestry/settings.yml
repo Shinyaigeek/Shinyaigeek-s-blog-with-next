@@ -9,7 +9,7 @@ sections:
   label: post
   create: documents
   match: "*.md"
-  new_doc_ext: md
+  new_doc_ext: ".md"
 - type: document
   path: '23'
   label: ggg
