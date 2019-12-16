@@ -7,3 +7,5 @@ fields:
   config:
     required: false
   label: aa
+pages:
+- items/kkk.

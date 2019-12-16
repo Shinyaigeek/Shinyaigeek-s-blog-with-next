@@ -9,7 +9,7 @@ sections:
   label: post
   create: documents
   match: "*.md"
-  new_doc_ext: ''
+  new_doc_ext: '20191214022915'
   templates:
   - test
 - type: document
