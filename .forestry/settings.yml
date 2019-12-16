@@ -12,6 +12,8 @@ sections:
   new_doc_ext: '20191214022915'
   templates:
   - test
+- type: heading
+  label: headings
 upload_dir: uploads
 public_path: "/uploads"
 front_matter_path: ''
