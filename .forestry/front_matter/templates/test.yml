@@ -2,10 +2,26 @@
 label: test
 hide_body: false
 fields:
-- name: aa
+- name: image
+  type: file
+  config:
+    maxSize: 250
+  label: image
+- name: title
   type: text
   config:
     required: false
-  label: aa
-pages:
-- items/kkk.
+  label: title
+- name: tag
+  type: tag_list
+  default: []
+  label: tag
+- name: publish
+  type: datetime
+  description: ''
+  config:
+    required: false
+    date_format: 
+    time_format: 
+    display_utc: false
+  label: publish
