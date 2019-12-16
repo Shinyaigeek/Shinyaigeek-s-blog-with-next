@@ -12,11 +12,6 @@ sections:
   new_doc_ext: '20191214022915'
   templates:
   - test
-- type: document
-  path: '23'
-  label: ggg
-- type: heading
-  label: sss
 upload_dir: uploads
 public_path: "/uploads"
 front_matter_path: ''
